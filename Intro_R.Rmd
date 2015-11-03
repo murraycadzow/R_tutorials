@@ -1,0 +1,224 @@
+---
+title: "R intro"
+author: "Murray Cadzow"
+date: "3 November 2015"
+output: html_document
+---
+
+# Lesson 1
+
+Covered in this lesson:
+
+- what is R/RStudio
+
+- basic operations
+
+- variables
+
+- reading and writing data
+
+- R scripts
+
+
+## What is R/RStudio?
+
+"R is a language and environment for statistical computing and graphics"
+
+Commands are entered and run in the R commandline
+
+RStudio is an interface for R
+
+
+## Basic operations
+
+### Working directory
+
+In R everything you do is in reference to what is know as your 'working directory'
+This is the folder on your computer that R will read and write data to by default
+
+You can find your current working directory with the command
+```{r, eval=FALSE}
+getwd()
+```
+
+likewise you can change your working directory with
+```{r, eval=FALSE}
+setwd(dir = "path/to/directory")
+```
+or in RStudio in the Session menu -> Set Working Driectory
+
+### Operators
+The basic arithmetic operatiors in R are:
+
+- addition +
+
+- subtraction -
+
+- multiplication *
+
+- division /
+
+- parentheses ( )
+
+- remainder division %%
+
+- exponentiation ^
+
+- assignment <-
+
+Order of operations follows BEDMAS, with **assignment being evaluated last**
+
+In your R prompt try the following:
+```{r, eval = FALSE, echo=TRUE}
+2 + 5
+8 - 1
+3 * 4
+6 / 2
+1 * ( 3 - 1 )
+7 %% 6
+2 ^ 3
+a <- 5
+```
+
+
+## Variables
+
+Variables are used in R to store things, these can be numbers, letters or even what other variables contain
+
+It is good practice to name your variable so that it describes what it contains
+
+Variables can be called anything you like so long as you follow these rules:
+- must start with a letter
+
+- cannot contain symbols other than underscore or period ( _ or .)
+
+- numbers (except at start) and upper or lower case letters are allowed
+
+- cannot be a reserved word
+
+
+Examples of variable names
+
+mydata
+
+Mydata
+
+myData
+
+my_data
+
+
+
+In the last example you used the assignment operator ( <- ) to store the value 5 in the variable called 'a'
+
+To view what a variable contains you just enter the variable name into the R prompt
+```{r, eval=TRUE, echo = FALSE}
+a <- 5
+```
+
+```{r, eval=TRUE, echo = TRUE}
+a
+```
+
+Variables can be overwritten by assigning something different to them
+Variables only contain the last item assigned
+```{r, eval = TRUE, echo = TRUE}
+weight <- 64
+height <- 168
+weight
+height
+height <- height / 100
+bmi <- weight / height ^ 2
+
+```
+
+What do weight, height, and bmi now contain?
+
+```{r}
+weight
+height
+bmi
+```
+
+## Reading and Writing data
+
+### Reading
+
+Just as we can store single values into variables, we can store entire datasets in a variable
+
+Generally the data we want to read in will be in either tab or comma separated format
+
+We have to specify the filename, if the file has a header at and the field seperating character ( \\t = tab )
+
+If you don't assign the output from read.delim to a variable it will just ouput the entire file into your prompt
+```{r, eval=FALSE, echo = TRUE}
+# for tab separated data
+mydata <- read.delim(file = "mydata.txt", header= TRUE, sep = "\t", stringsAsFactors = FALSE)
+
+# for comma separated data
+mydata <- read.delim(file = "mydata.txt", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+```
+
+### Writing
+
+Writing files is very similar with a few minor differences
+
+```{r, eval = FALSE, echo = TRUE}
+write.table(data = mydata, file = "mydata_out.txt", sep = "\t", col.names = TRUE, row.names= FALSE, quote = FALSE )
+```
+
+
+# Lesson 2
+
+This lesson is on storing and accessing data in R
+it will cover:
+
+- viewing data
+
+- data types
+
+- data structures
+
+- naming
+
+- gotchas
+
+## Viewing data
+
+First we need some data to look at
+```{r, eval = FALSE, echo = TRUE}
+data <- read.delim(file = "file.txt", header = TRUE, stringsAsFactors = FALSE, sep ="\t")
+```
+
+Lets look at the dimensions of this dataset
+```{r, eval=FALSE, echo=TRUE}
+dim(mydata)
+```
+
+This tells us how many rows and columns we are dealing with
+
+We can also find out what data structure our data has been put into
+
+```{r, eval = FALSE, echo = TRUE}
+class(mydata)
+```
+
+We can see that our data has been put into a ```r class(data)``` structure. More on this later
+
+
+## Data Types
+
+In R there are different data types automatically assigned depending on your data
+the main data types are:
+
+- numeric
+
+- integer
+
+- character
+
+- factor
+
+- boolean
+
+- NA
