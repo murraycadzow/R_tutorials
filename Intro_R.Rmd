@@ -247,6 +247,8 @@ the main data types are:
 
 - factor
 
+- coercion
+
 - missing values
 
 
@@ -302,7 +304,32 @@ factor( c(1,1,5,3,3,3,2))
 To find the levels for a factor data type use the _levels()_ function
 
 
+### Coercion
 
+You can coerce (convert) data types by using the as.<datatype>() function
+
+A common conversion is numeric or factor -> character
+
+Some data can't be coerced because it doesn't make sense
+
+e.g.
+
+```{r, echo = TRUE, eval = TRUE}
+# numeric to character
+a <- 4
+class(a)
+a <- as.character(a)
+class(a)
+a
+
+# doesn't make sense
+word <- "letters"
+class(word)
+word <- as.numeric(word)
+class(word)
+word
+
+```
 
 ### Missing values
 
