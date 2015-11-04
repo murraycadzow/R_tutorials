@@ -53,6 +53,8 @@ boxplot(BMI~GOUT)
 
 ```{r}
 plot(AGECOL,BMI)
+
+plot(AGECOL,BMI,col=SEX)
 ```
 
 ---
