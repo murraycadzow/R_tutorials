@@ -160,10 +160,10 @@ We have to specify the filename, if the file has a header at and the field seper
 If you don't assign the output from read.delim to a variable it will just ouput the entire file into your prompt
 ```{r, eval=FALSE, echo = TRUE}
 # for tab separated data
-mydata <- read.delim(file = "mydata.txt", header= TRUE, sep = "\t", stringsAsFactors = FALSE)
+mydata <- read.delim(file = "dummy_data.txt", header= TRUE, sep = "\t", stringsAsFactors = FALSE)
 
 # for comma separated data
-mydata <- read.delim(file = "mydata.txt", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+mydata <- read.delim(file = "dummy_data.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 ```
 
 ### Writing
@@ -194,7 +194,7 @@ it will cover:
 
 First we need some data to look at
 ```{r, eval = FALSE, echo = TRUE}
-data <- read.delim(file = "file.txt", header = TRUE, stringsAsFactors = FALSE, sep ="\t")
+mydata <- read.delim(file = "dummy_data.txt", header = TRUE, stringsAsFactors = FALSE, sep ="\t")
 ```
 
 Lets look at the dimensions of this dataset
@@ -428,4 +428,10 @@ dim(df)
 
 # names of columns
 names(df)
+
+# column names
+colnames(df)
+
+# row names
+rownames(df)
 ```
