@@ -627,7 +627,7 @@ Just as we can use square brackets and indices to select items we want, instead 
 under40_repeat <- mydata[mydata$AGECOL < 40 , ]
 dim(under40_repeat)
 
-# who has missing age?
+# who is missing age?
 missing_age <- mydata[is.na(mydata$AGECOL),"PATIENT"]
 missing_age
 ```
