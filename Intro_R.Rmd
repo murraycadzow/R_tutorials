@@ -483,8 +483,35 @@ df[1,1]
 # third row, first column
 df[3,1]
 
+# first and second rows, second column
+df[c(1,2), 2]
 # example error: second row, third column
 df[2,3]
+```
+
+If you leave a index blank then R gives you everything
+```{r, eval=TRUE, echo=TRUE}
+# all of row 1
+df[1, ]
+
+# all of column 1
+df[, 1]
+
+# everything
+df[ , ]
+```
+
+R also has a special feature for generating a vector of sequences of numbers with a:b
+
+We can use this feature to select multiple sequencial items
+
+```{r, eval = TRUE, echo = TRUE}
+1:3
+
+5:9
+
+# select rows 1 to 3, column 2
+df[1:3, 2]
 ```
 
 ## Gotchas
