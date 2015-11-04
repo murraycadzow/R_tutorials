@@ -75,7 +75,50 @@ sd(BMI, na.rm=T)
 ## Other summaries
 
  - the above are just a few summaries that can be produced.
- - try: IQR, max, min, range...
+    - try: IQR, max, min, range...
+ - We can also summarize categorical data using tables via the ```table``` command.
+    - ```prop.table``` can then be used to calculate proportions.
+
+```{r}
+## Make a table of the ethnicity data
+## Note that information class labels can be a good thing...
+table(ETHCLASS)
+
+## Include the NA information
+table(ETHCLASS, useNA = 'always')
+
+## Gout status
+table(GOUT)
+
+## Two-way table of ethnicity and gout
+table(ETHCLASS, GOUT)
+
+## Add dimension names
+table(ETHCLASS, GOUT, dnn = c("Ethnicity","Gout"))
+
+## We can also flip this via the transpose operator:
+t( table(ETHCLASS, GOUT) )
+
+## Use the prop.table command to calculate proportions (cells sum to 1):
+prop.table( table(ETHCLASS, GOUT) )
+
+## You can also calculate proportions across rows (rows sum to 1):
+prop.table( table(ETHCLASS, GOUT), 1 )
+
+## or down columns (columns sum to 1):
+prop.table( table(ETHCLASS, GOUT), 2 )
+```
+
+---
+
+## Plotting
+
+ - Need to  use the right sort of plot for the data we have
+    - One continuous variable: histogram (```hist```), boxplot (```boxplot```),
+    density plot (```plot``` and ```density``` - see below)
+    - Two continuous variabes: scatterplot (```plot```)
+    - One (or more) cateogircal variables: barplots (```barplot```)
+    - One continuous and one (or more) categorical variable: boxplots (```boxplot```)
 
 ---
 
