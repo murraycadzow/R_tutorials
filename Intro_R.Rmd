@@ -306,7 +306,7 @@ To find the levels for a factor data type use the _levels()_ function
 
 ### Coercion
 
-You can coerce (convert) data types by using the as.<datatype>() function
+You can coerce (convert) data types by using the as.\<datatype\>() function
 
 A common conversion is numeric or factor -> character
 
@@ -318,6 +318,7 @@ e.g.
 # numeric to character
 a <- 4
 class(a)
+a
 a <- as.character(a)
 class(a)
 a
@@ -325,6 +326,7 @@ a
 # doesn't make sense
 word <- "letters"
 class(word)
+word
 word <- as.numeric(word)
 class(word)
 word
