@@ -11,6 +11,8 @@ Covered in this lesson:
 
 - what is R/RStudio
 
+- getting help
+
 - basic operations
 
 - variables
@@ -28,6 +30,11 @@ Commands are entered and run in the R commandline
 
 RStudio is an interface for R
 
+## Getting help
+
+On the prompt you can type _??command_ or _help(command)_ and the documentation for the command will appear
+
+You can also refer to the R manual https://cran.r-project.org/doc/manuals/r-release/R-intro.html
 
 ## Basic operations
 
@@ -205,20 +212,220 @@ class(mydata)
 
 We can see that our data has been put into a ```r class(data)``` structure. More on this later
 
+To view the first entries of our data we use the _head()_ function
+```{r, eval = FALSE, echo = TRUE}
+head(mydata)
+```
+
+Similarily, we can view the last entries of our data we use the _tail()_ function
+```{r, eval = FALSE, echo = TRUE}
+tail(mydata)
+```
+
+In **RStudio** we can use the _View()_ function to open our data in a familiar spreadsheet view
+```{r, eval=FALSE, echo = TRUE}
+View(mydata)
+```
 
 ## Data Types
 
 In R there are different data types automatically assigned depending on your data
 the main data types are:
 
+
+
 - numeric
 
 - integer
+
+- logical
 
 - character
 
 - factor
 
-- boolean
+- missing values
 
-- NA
+
+### Numeric/Integer
+
+Numeric and integer data types are exactly what they sound like - numbers
+
+e.g. 1, 3.6 100, 5e7, 2e-2
+
+The integer data type has to be specifically created
+
+You can test if you have a numeric data type by using either the _class()_ or _is.numeric()_ functions
+
+
+### Logical
+
+The logical data type consists of the values **TRUE** and **FALSE**, and is often created as the result of the comparison operators (>,<,>=,<=,!,!=, ==, |, &)
+
+
+
+
+### Character
+
+A character or string of characters in R needs to be quoted, this is so R can distinguish between variable names and character data
+
+Characters are any number,letter, or symbol on the keyboard including the white space (tab "\\t", space " ", and newline "\\n")
+
+Placing a number in quotes forces it to be a character data type
+
+eg "a", "a string of characters", "%", "2"
+
+You can test if you have a character data type by using either the _class()_ or _is.character()_ functions
+
+
+
+
+### Factors
+
+Factors are a special data type in R and are used for groups with a set of levels
+
+Levels can be either numeric or characters but being a factor data type, the possible __levels__/groups are stored too
+
+In the _read.delim()_ function earlier we specified stringsAsFactors = FALSE, this is to override the default settings where all strings are read in as the factor data type
+
+To demonstrate what a factor looks like we'll change a character data type into a factor with the _factor()_ function
+
+```{r}
+factor( c("control", "control", "case", "control", "case"))
+
+factor( c(1,1,5,3,3,3,2))
+```
+
+To find the levels for a factor data type use the _levels()_ function
+
+
+
+
+### Missing values
+
+Missing values in R are assigned a special datatype called **NA**
+
+NA acts as a place holder but often causes errors in functions when not removed
+
+R provides a few useful functions for dealing with NA
+```{r, echo = TRUE, eval = TRUE}
+missing <- NA
+missing
+is.na(missing)
+
+
+mydata <- c(1, 2, NA, 3, 4)
+
+# example error for missing data
+sum(data = mydata)
+```
+
+You can see that if you have an **NA** in your data, you will get back **NA** as a result
+
+We can either remove the NA prior to using it, or functions often have the option to temporarily ignore NAs using na.rm = TRUE
+
+```{r, echo = TRUE, eval = TRUE}
+mydata
+sum( data = mydata, na.rm = TRUE )
+
+mydata <- na.omit(mydata)
+mydata
+sum(data = mydata)
+```
+
+
+## Data Structures
+
+In R we arrange multiple data into structures based on the content
+
+These structures include:
+
+- vectors
+
+- matrices
+
+- lists
+
+- dataframes
+
+The most common of these are vectors and dataframes
+
+### Vectors
+
+vectors are the most basic data structure in R and consist of 0 (empty vector) or more values of any data type
+
+Vectors are created using the function _c()_ - short for concatenate
+```{r, echo = TRUE, eval = TRUE}
+# an empty vector
+c()
+
+# numeric vector
+c(1,2,3,4,5)
+
+# logical vector
+c(TRUE, FALSE, TRUE)
+
+# character vector
+c("a", "b", "c")
+
+# a multitype vector
+c(1, "a", FALSE)
+```
+
+We can also find out how many items are in a vector with the _length()_ function
+```{r, echo = TRUE, eval = TRUE}
+mydata <- c(1,5,3,4,2)
+length(mydata)
+```
+
+### Matrices
+
+A matrix is a 2 dimensional rectangular layout of data elements of a single data type
+
+```{r, echo = TRUE, eval = TRUE}
+mat <- matrix( data = c(1,2,3,4,5,6), nrow = 2, ncol = 3, byrow = TRUE)
+mat
+```
+
+### Lists
+
+A list consists of 0 or more elements, each element can be of same or differing lengths as well as differing data type and/or structure
+
+```{r, eval = TRUE, echo = TRUE}
+# empty list
+list()
+
+# 2 vectors
+list1 <- list( c(1,2,3), c('a', 'b'))
+list1
+
+# vector and matrix
+list2 <- list(mydata, mat)
+list2
+```
+
+### Dataframes
+
+Dataframes can be thought of as similar to a spreadsheet, made up of vectors forming columns of the same length. The number length of the vectors is the number of rows
+```{r, eval = TRUE, echo = TRUE}
+height <- c(1.5, 1.6, 1.55)
+weight <- c(60,63,62)
+
+df <- data.frame(height, weight )
+df
+```
+
+
+We can find out different attributes from our dataframe such as dimensions
+```{r, eval = TRUE, echo = TRUE}
+# number rows
+nrow(df)
+# number of columns
+ncol(df)
+
+# dimensions (rows, cols)
+dim(df)
+
+# names of columns
+names(df)
+```
