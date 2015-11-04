@@ -1,0 +1,115 @@
+---
+title: "Basic R plotting"
+author: "Mik Black"
+date: "4 November 2015"
+output: html_document
+---
+  
+```{r}
+data <- read.csv('dummy_data.csv')
+class(data)
+dim(data)
+names(data)
+head(data)
+head(data$BMI)
+## BMI
+attach(data)
+head(BMI)
+```
+
+---
+
+## Data summaries
+
+```{r}
+summary(data)
+summary(BMI)
+
+mean(BMI)
+mean(BMI,na.rm=T)
+median(BMI,na.rm=T)
+sd(BMI,na.rm=T)
+```
+
+---
+
+## Histograms
+
+```{r}
+hist(AGECOL)
+```
+
+---
+
+## Boxplots
+
+```{r}
+boxplot(BMI~GOUT)
+```
+
+---
+
+## Scatterplots
+
+```{r}
+plot(AGECOL,BMI)
+```
+
+---
+
+## Barplots
+
+```{r}
+table(ETHCLASS)
+barplot(table(ETHCLASS))
+
+table(GOUT)
+table(ETHCLASS,GOUT)
+barplot(table(ETHCLASS,GOUT)[-4,])
+t(table(ETHCLASS,GOUT)[-4,])
+barplot(t(table(ETHCLASS,GOUT)[-4,]))
+
+barplot(t(table(ETHCLASS,GOUT)[-4,]),beside=TRUE)
+
+prop.table(table(ETHCLASS,GOUT)[-4,],2)
+barplot(prop.table(table(ETHCLASS,GOUT)[-4,],2))
+
+prop.table(table(ETHCLASS,GOUT)[-4,],1)
+t(prop.table(table(ETHCLASS,GOUT)[-4,],1))
+barplot(t(prop.table(table(ETHCLASS,GOUT)[-4,],1)))
+```
+
+---
+
+## Density plots
+
+```{r}
+hist(BMI)
+
+## plot(density(BMI))
+
+plot(density(BMI,na.rm=T))
+```
+
+---
+
+## Multiple plots per page
+
+```{r}
+par(mfrow=c(1,2))
+hist(BMI)
+plot(density(BMI,na.rm=T))
+```
+
+---
+
+## Saving plots
+
+```{r}
+pdf(file='bmi_historgram.pdf', height=6, width=6)
+hist(BMI)
+dev.off()
+```
+
+
+
