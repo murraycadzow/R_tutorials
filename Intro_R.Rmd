@@ -7,6 +7,7 @@ output: html_document
 
 # Lesson 1
 
+
 Covered in this lesson:
 
 - what is R/RStudio
@@ -614,3 +615,24 @@ male_gout <- subset(x = mydata, mydata$SEX == 1 & mydata$GOUTAFFSTAT == 2)
 dim(male_gout)
 
 ```
+
+### Subset with square brackets
+
+Just as we can use square brackets and indices to select items we want, instead of indices we can provide a logical condition
+
+
+```{r, echo = TRUE, eval = TRUE}
+# repeat under 40 selection
+# here we're saying we want all the columns but select the rows where the condition is met
+under40_repeat <- mydata[mydata$AGECOL < 40 , ]
+dim(under40_repeat)
+
+# who has missing age?
+missing_age <- mydata[is.na(mydata$AGECOL),"PATIENT"]
+missing_age
+```
+
+
+# Lesson 4
+
+Data exploration
