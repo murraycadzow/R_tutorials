@@ -7,6 +7,7 @@ output: html_document
 
 # Lesson 1
 
+
 Covered in this lesson:
 
 - what is R/RStudio
@@ -35,6 +36,8 @@ RStudio is an interface for R
 On the prompt you can type _??command_ or _help(command)_ and the documentation for the command will appear
 
 You can also refer to the R manual https://cran.r-project.org/doc/manuals/r-release/R-intro.html
+
+Or www.google.com with "R command" or "R thing I want to do"
 
 ## Basic operations
 
@@ -186,14 +189,14 @@ it will cover:
 
 - data structures
 
-- naming
+- naming/indices
 
 - gotchas
 
 ## Viewing data
 
 First we need some data to look at
-```{r, eval = FALSE, echo = TRUE}
+```{r, eval = TRUE, echo = TRUE}
 mydata <- read.delim(file = "dummy_data.txt", header = TRUE, stringsAsFactors = FALSE, sep ="\t")
 ```
 
@@ -210,7 +213,7 @@ We can also find out what data structure our data has been put into
 class(mydata)
 ```
 
-We can see that our data has been put into a ```r class(data)``` structure. More on this later
+We can see that our data has been put into a ```r class(mydata)``` structure. More on this later
 
 To view the first entries of our data we use the _head()_ function
 ```{r, eval = FALSE, echo = TRUE}
@@ -243,6 +246,8 @@ the main data types are:
 - character
 
 - factor
+
+- coercion
 
 - missing values
 
@@ -299,7 +304,34 @@ factor( c(1,1,5,3,3,3,2))
 To find the levels for a factor data type use the _levels()_ function
 
 
+### Coercion
 
+You can coerce (convert) data types by using the as.\<datatype\>() function
+
+A common conversion is numeric or factor -> character
+
+Some data can't be coerced because it doesn't make sense
+
+e.g.
+
+```{r, echo = TRUE, eval = TRUE}
+# numeric to character
+a <- 4
+class(a)
+a
+a <- as.character(a)
+class(a)
+a
+
+# doesn't make sense
+word <- "letters"
+class(word)
+word
+word <- as.numeric(word)
+class(word)
+word
+
+```
 
 ### Missing values
 
@@ -413,11 +445,7 @@ weight <- c(60,63,62)
 
 df <- data.frame(height, weight )
 df
-```
 
-
-We can find out different attributes from our dataframe such as dimensions
-```{r, eval = TRUE, echo = TRUE}
 # number rows
 nrow(df)
 # number of columns
@@ -425,6 +453,16 @@ ncol(df)
 
 # dimensions (rows, cols)
 dim(df)
+```
+
+## Naming/Indices
+
+
+### Naming
+
+We can find out different attributes from our dataframe such as dimensions
+```{r, eval = TRUE, echo = TRUE}
+
 
 # names of columns
 names(df)
@@ -435,3 +473,195 @@ colnames(df)
 # row names
 rownames(df)
 ```
+
+You can also change the names, row names, column names
+
+The replacement vector has to match the length of the current names vector
+
+```{r, eval = TRUE, echo = TRUE}
+names(df) <- c("height_m", "weight_kg")
+names(df)
+
+rownames(df) <- c("row1", "row2", "row3")
+rownames(df)
+```
+
+
+You can also use these column names to access only that column
+
+To do this we use the variable name followed by the "$" symbol followed by the column name
+```{r, echo = TRUE, eval = TRUE}
+df$height_m
+```
+
+### Indices
+
+In R, each item can also be refered to by its position (i) using the square brackets [i]
+
+Vectors only have a single index, whereas matrices and dataframes have 2 in the form [row, column]
+
+Lists are special in that [[i]] is used to access the list element
+
+
+```{r, echo = TRUE, eval = TRUE}
+dim(df)
+df
+
+# first row, first column
+df[1,1]
+
+# third row, first column
+df[3,1]
+
+# first and second rows, second column
+df[c(1,2), 2]
+# example error: second row, third column
+df[2,3]
+```
+
+If you leave a index blank then R gives you everything
+```{r, eval=TRUE, echo=TRUE}
+# all of row 1
+df[1, ]
+
+# all of column 1
+df[, 1]
+
+# everything
+df[ , ]
+```
+
+R also has a special feature for generating a vector of sequences of numbers with a:b
+
+We can use this feature to select multiple sequencial items
+
+```{r, eval = TRUE, echo = TRUE}
+1:3
+
+5:9
+
+# select rows 1 to 3, column 2
+df[1:3, 2]
+```
+
+## Gotchas
+
+- blanks not becoming NAs
+
+- auto factorisation when reading data in
+
+- NAs being used by a function
+
+- data not being the expected type by function
+
+- index doesn't exist
+
+
+# Lesson 3
+
+In this lesson we will cover subsetting your data using:
+
+- logical operations
+
+- subset()
+
+- square brackets
+
+## Logical operations
+
+Before we can subset we need to know how to create the conditions for R to know what to select
+
+We do this through logical comparisions
+
+The logical operators as mentioned before are:
+
+- == ( equality )
+
+- != ( not equal)
+
+- \> (greater than)
+
+- \>= (greater than or equal to)
+
+- < (less than)
+
+- <= (less than or equal to)
+
+- ! (not)
+
+- \| (or)
+
+- & (and)
+
+The result of using these logical comparisons is a vector of **TRUE**s and **FALSE**s
+
+Here are some examples:
+```{r, eval = TRUE, echo = TRUE}
+df$weight
+df$weight_kg < 62
+
+# using not
+!( df$weight_kg < 62)
+
+# equality
+df$weight_kg == 62
+
+# not equality
+df$weight_kg != 62
+
+# combine conditions
+df$weight > 62 | df$weight < 62
+
+# different types
+3 < 'a'
+```
+
+**NOTE** comparisons will be performed on the "lowest common data type" which is usually _character_ when different types are involved
+
+
+## _Subset()_
+
+The subset function provides a easy way to subset your data into groups based on your logical conditions
+
+We'll use the dummy data for these examples
+
+```{r, echo = TRUE, eval = TRUE}
+# read data in
+mydata <- read.delim(file = "dummy_data.txt", header = TRUE, stringsAsFactors = FALSE, sep ="\t")
+
+# what does it look like?
+dim(mydata)
+head(mydata)
+
+# select patients under 40
+under40 <- subset(x = mydata, mydata$AGECOL < 40)
+
+# how many people do we now have?
+dim(under40)
+
+# from our original data how many people are male (SEX == 1) and have gout (GOUTAFFSTAT == 2)
+male_gout <- subset(x = mydata, mydata$SEX == 1 & mydata$GOUTAFFSTAT == 2)
+dim(male_gout)
+
+```
+
+### Subset with square brackets
+
+Just as we can use square brackets and indices to select items we want, instead of indices we can provide a logical condition
+
+
+```{r, echo = TRUE, eval = TRUE}
+# repeat under 40 selection
+# here we're saying we want all the columns but select the rows where the condition is met
+under40_repeat <- mydata[mydata$AGECOL < 40 , ]
+dim(under40_repeat)
+
+# who is missing age?
+missing_age <- mydata[is.na(mydata$AGECOL),"PATIENT"]
+missing_age
+```
+
+
+# Lesson 4
+
+Data exploration
