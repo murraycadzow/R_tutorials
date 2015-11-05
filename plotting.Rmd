@@ -125,7 +125,25 @@ prop.table( table(ETHCLASS, GOUT), 2 )
 ## Histograms
 
 ```{r}
-hist(AGECOL)
+## Generate histogram of age data
+hist( AGECOL )
+```
+
+## Making plots prettier
+
+ - most base R plotting methods share parameters relating to plot aesthetics (e.g., 
+ axis labels/limits, title, text size, plotting colours etc)
+ - this makes it very easy to customize plots, and may them look fairly nice
+
+```{r}
+## Add title and axis labels
+hist( AGECOL , main = "Histogram of Age", xlab = "Age (years)")
+
+##Add some colour...
+hist( AGECOL , main = "Histogram of Age", xlab = "Age (years)", col='lightblue')
+
+## Extend y axis
+hist( AGECOL , main = "Histogram of Age", xlab = "Age (years)", ylim = c(0,400))
 ```
 
 ---
