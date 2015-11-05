@@ -1,0 +1,295 @@
+---
+title: "Lesson 4 - basic R plotting"
+author: "Mik Black"
+date: "6 November 2015"
+output: html_document
+---
+
+## R graphics
+
+ - R provides multiple "systems" for producing graphics
+ - We're going to focus on the oldest (and arguably easiest) of these: R base graphics
+ - These capabilities are included with base R (i.e., what you get when you install the R software), and don't require any additional packages to be loaded.
+
+---
+
+## But first... data summaries
+
+ - One of the reasons for generating plots is to produce a visual summary of the data
+    - this helps us (and ohers) to understand key features such as _centre_ and _spread_.
+ - In addition to graphical methods, we can also use tools to produce numerical summaries of this information.
+    - For example: mean, median, standard deviation, variance, range, min, max, 
+    interquartile range...
+
+---
+
+## Examples: non-graphical data summaries
+
+```{r}
+## Lets load the data and take a look at it first
+data <- read.csv('dummy_data.csv')
+
+## What type of object have we created?
+class(data)
+
+## What are its dimensions?
+dim(data)
+
+## What are the variable names?
+names(data)
+
+## What do the first few rows look like?
+head(data)
+
+## What does the start of the BMI variable look like?
+## (note the use of the $ operator to access the BMI information from the data object)
+head(data$BMI)
+
+## What if we "attach" the data?
+attach(data)
+
+## Look, no more $ sign!
+head(BMI)
+
+## Summarize the entire data frame
+summary(data)
+
+## Summarize just the BMI variable
+summary(BMI)
+
+## Calculate the mean of the BMI variable
+mean(BMI)
+
+## Oops, we need to get rid of the NA values
+mean(BMI,na.rm=T)
+
+## Calculate the mean of the BMI variable
+median(BMI, na.rm=T)
+
+## Calculate the standard deviation of the BMI variable
+sd(BMI, na.rm=T)
+```
+
+---
+
+## Other summaries
+
+ - the above are just a few summaries that can be produced.
+    - try: IQR, max, min, range...
+ - We can also summarize categorical data using tables via the ```table``` command.
+    - ```prop.table``` can then be used to calculate proportions.
+
+```{r}
+## Make a table of the ethnicity data
+## Note that information class labels can be a good thing...
+table(ETHCLASS)
+
+## Include the NA information
+table(ETHCLASS, useNA = 'always')
+
+## Diabetes status
+table(DIABETES)
+
+## Two-way table of ethnicity and diabetes
+table(ETHCLASS, DIABETES)
+
+## Add dimension names
+table(ETHCLASS, DIABETES, dnn = c("Ethnicity","Diabetes"))
+
+## We can also flip this via the transpose operator:
+t( table(ETHCLASS, DIABETES) )
+
+## Use the prop.table command to calculate proportions (cells sum to 1):
+prop.table( table(ETHCLASS, DIABETES) )
+
+## You can also calculate proportions across rows (rows sum to 1):
+prop.table( table(ETHCLASS, DIABETES), 1 )
+
+## or down columns (columns sum to 1):
+prop.table( table(ETHCLASS, DIABETES), 2 )
+```
+
+---
+
+## Plotting
+
+ - Need to  use the right sort of plot for the data we have
+    - One continuous variable: histogram (```hist```), boxplot (```boxplot```),
+    density plot (```plot``` and ```density``` - see below)
+    - Two continuous variabes: scatterplot (```plot```)
+    - One (or more) cateogircal variables: barplots (```barplot```)
+    - One continuous and one (or more) categorical variable: boxplots (```boxplot```)
+
+---
+
+## Histograms - single continuous variable
+
+```{r}
+## Generate histogram of age data
+hist( AGECOL )
+```
+
+## Making plots prettier
+
+ - most base R plotting methods share parameters relating to plot aesthetics (e.g., 
+ axis labels/limits, title, text size, plotting colours etc)
+ - this makes it very easy to customize plots, and may them look fairly nice
+
+```{r}
+## Add title and axis labels
+hist( AGECOL , main = "Histogram of Age", xlab = "Age (years)")
+
+##Add some colour...
+hist( AGECOL , main = "Histogram of Age", xlab = "Age (years)", col='lightblue')
+
+## Extend y axis
+hist( AGECOL , main = "Histogram of Age", xlab = "Age (years)", ylim = c(0,400))
+```
+
+---
+
+## Boxplots - single continuous variable
+
+```{r}
+## Boxplot of BMI
+boxplot(BMI)
+```
+
+## Boxplots - continuous & categorical variables
+
+```{r}
+## Boxplot of BMI vs Diabetes Status
+boxplot(BMI ~ DIABETES, xlab = "Diabetes status", ylab = "BMI", main = "BMI vs diabetes status")
+
+## Change the colours and box widths
+## Note: ```col``` defines the box colour, and ```border``` defines the border colour
+boxplot(BMI ~ DIABETES, xlab = "Diabetes status", ylab = "BMI", main = "BMI vs diabetes status",
+        boxwex = 0.2, col = "lightblue", border = "blue")
+```
+
+---
+
+## Scatterplots - two continuous variables
+
+```{r}
+## Scatterplot of Age vs BMI
+plot(AGECOL, BMI)
+
+## Change plotting symbol, size and colour
+plot(AGECOL, BMI, pch = 16, col = "blue", cex = 0.5)
+
+## Use SEX variable to denote colour (has to be numeric, or actual colours)
+## R colours are: 1 = black, 2 = red, 3 = green, 4 = blue, 5 = cyan, 6 = magenta,
+##                7 = yellow, 8 = grey, 9 = black, 0 = white            
+plot(AGECOL, BMI, col = SEX, pch = 16)
+
+## Adjust y axis limits and add a legend
+plot(AGECOL, BMI, col = SEX, pch = 16, ylim = c(18, 80))
+legend(20, 80, c("Male", "Female"), fill = c("black","red"))
+```
+
+---
+
+## Barplots - one or more categorical variables
+
+```{r}
+## Summarize ethinicty data as a table:
+table(ETHCLASS)
+
+## Represent this information as a barplot
+barplot( table(ETHCLASS) )
+
+## Generate 2-way tabe for ethnicity and diabetes
+table(ETHCLASS, DIABETES)
+
+## Represent this information as a (stacked) barplot
+barplot( table(ETHCLASS, DIABETES), xlab = "Diabetes status", ylab = "Frequency" )
+
+## Same information, unstacked
+barplot( table(ETHCLASS, DIABETES), xlab = "Diabetes status", ylab = "Frequency", beside = TRUE )
+
+## What is we want to look at it the other way around?
+## Use the transpose function, t(), to flip the table
+t( table(ETHCLASS, DIABETES) )
+
+## Then make a barplot
+barplot( t(table(ETHCLASS, DIABETES)), beside = TRUE )
+
+## What if we're more interested in proportions?
+prop.table( table(ETHCLASS, DIABETES) )
+
+## Make the corresponding barplot
+barplot( prop.table(table(ETHCLASS, DIABETES)) )
+
+## Or we can make the columns sum to one
+prop.table( table(ETHCLASS, DIABETES), 2)
+barplot( prop.table(table(ETHCLASS, DIABETES), 2) )
+```
+
+---
+
+## Density plots
+
+ - Sometines it is useful to represent continuous data as a density, rather than
+ a histogram.
+ 
+```{r}
+## Histogram of BMI data 
+hist(BMI)
+
+## Density plot of BMI data
+## Note: have to remove NA values, or the density() function gives an error.
+plot( density(BMI, na.rm = T) )
+```
+
+---
+
+## Multiple plots per page
+
+ - Arranging multiple plots on a single figure can be useful
+ - In base R graphics this is accomplished using either the ```mfrow()``` or
+ ```mfcol()``` functions.
+   - both specify a grid of plots: which function you use depends on the order in which you want to generate the plots.
+   - ```mfrow()``` fills the grid row-by-row (left to right)
+   - ```mfcol()``` fills the grid column-by-column (top to bottom)
+   
+```{r}
+## Specify a 1 x 2 (1 row, 2 columns) grid of plots, and fill by rows, left to right
+par(mfrow = c(1, 2))
+
+## Place a histogram of BMI in the first cell of the first row
+hist(BMI)
+
+## Place a density plot of BMI in the second cell of the first row
+plot(density(BMI, na.rm=T))
+```
+
+---
+
+## Saving plots
+
+ - R can output graphics in a number of formats: pdf, jpeg, png etc
+ - In RStudio you can also save your plots via the "Export" menu in the "Plots" tab.
+ - The following code opens a PDF file, writes a histogram to that file, and then
+ closes the connection to the file.
+ 
+```{r}
+## Open PDF file for writing, and specify dimensions
+## Note that PDF files use dimensions based on inches, whereas png and 
+## jpeg files use pixels
+pdf(file = 'bmi_histogram.pdf', height = 6, width = 6)
+
+## Write histogram of BMI to file
+hist(BMI)
+
+## Close the file
+dev.off()
+
+## For multi-plot figures, you need to adjust the dimensions
+pdf(file = 'bmi_histogram_density.pdf', height = 6, width = 12)
+par(mfrow = c(1, 2))
+hist(BMI)
+plot(density(BMI, na.rm=T))
+dev.off()
+```
+
