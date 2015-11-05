@@ -159,7 +159,12 @@ boxplot(BMI)
 
 ```{r}
 ## Boxplot of BMI vs Gout Status
-boxplot(BMI ~ GOUT, xlab="Gout status", ylab="BMI", main="BMI vs gout status")
+boxplot(BMI ~ GOUT, xlab = "Gout status", ylab = "BMI", main = "BMI vs gout status")
+
+## Change the colours and box widths
+## Note: ```col``` defines the box colour, and ```border``` defines the border colour
+boxplot(BMI ~ GOUT, xlab = "Gout status", ylab = "BMI", main = "BMI vs gout status",
+        boxwex = 0.2, col = "lightblue", border = "blue")
 ```
 
 ---
@@ -174,52 +179,88 @@ plot(AGECOL, BMI)
 plot(AGECOL, BMI, pch = 16, col = "blue", cex = 0.5)
 
 ## Use SEX variable to denote colour (has to be numeric, or actual colours)
+## R colours are: 1 = black, 2 = red, 3 = green, 4 = blue, 5 = cyan, 6 = magenta,
+##                7 = yellow, 8 = grey, 9 = black, 0 = white            
 plot(AGECOL, BMI, col = SEX, pch = 16)
+
+## Adjust y axis limits and add a legend
+plot(AGECOL, BMI, col = SEX, pch = 16, ylim = c(18, 80))
+legend(20, 80, c("Male", "Female"), fill = c("black","red"))
 ```
 
 ---
 
-## Barplots
+## Barplots - one or more categorical variables
 
 ```{r}
+## Summarize ethinicty data as a table:
 table(ETHCLASS)
+
+## Represent this information as a barplot
 barplot( table(ETHCLASS) )
 
-table(GOUT)
+## Generate 2-way tabe for ethnicity and gout
 table(ETHCLASS, GOUT)
-barplot( table(ETHCLASS, GOUT)[-4,] )
-t(table( ETHCLASS, GOUT)[-4,] )
-barplot( t(table(ETHCLASS, GOUT)[-4,]) )
 
-barplot( t(table(ETHCLASS, GOUT)[-4,]), beside=TRUE)
+## Represent this information as a (stacked) barplot
+barplot( table(ETHCLASS, GOUT), xlab = "Gout status", ylab = "Frequency" )
 
-prop.table( table(ETHCLASS, GOUT)[-4,], 2)
-barplot( prop.table(table(ETHCLASS, GOUT)[-4,], 2) )
+## Same information, unstacked
+barplot( table(ETHCLASS, GOUT), xlab = "Gout status", ylab = "Frequency", beside = TRUE )
 
-prop.table( table(ETHCLASS, GOUT)[-4,], 1)
-t(prop.table( table(ETHCLASS, GOUT)[-4,], 1) )
-barplot( t(prop.table(table(ETHCLASS, GOUT)[-4,], 1)) )
+## What is we want to look at it the other way around?
+## Use the transpose function, t(), to flip the table
+t( table(ETHCLASS, GOUT) )
+
+## Then make a barplot
+barplot( t(table(ETHCLASS, GOUT)), beside = TRUE )
+
+## What if we're more interested in proportions?
+prop.table( table(ETHCLASS, GOUT) )
+
+## Make the corresponding barplot
+barplot( prop.table(table(ETHCLASS, GOUT)) )
+
+## Or we can make the columns sum to one
+prop.table( table(ETHCLASS, GOUT), 2)
+barplot( prop.table(table(ETHCLASS, GOUT), 2) )
 ```
 
 ---
 
 ## Density plots
 
+ - Sometines it is useful to represent continuous data as a density, rather than
+ a histogram.
+ 
 ```{r}
+## Histogram of BMI data 
 hist(BMI)
 
-## plot(density(BMI))
-
-plot(density(BMI, na.rm=T))
+## Density plot of BMI data
+## Note: have to remove NA values, or the density() function gives an error.
+plot( density(BMI, na.rm = T) )
 ```
 
 ---
 
 ## Multiple plots per page
 
+ - Arranging multiple plots on a single figure can be useful
+ - In base R graphics this is accomplished using either the ```mfrow()``` or
+ ```mfcol()``` functions.
+   - both specify a grid of plots: which function you use depends on the order in which you want to generate the plots.
+   - ```mfrow()``` fills the grid row-by-row (left to right)
+   - ```mfcol()``` fills the grid column-by-column (top to bottom)
+   
 ```{r}
+## Specify a 1 x 2 (1 row, 2 columns) grid of plots, and fill by rows, left to right
 par(mfrow = c(1, 2))
+
+## Place a histogram of BMI in the first cell of the first row
 hist(BMI)
+
+## Place a density plot of BMI in the second cell of the first row
 plot(density(BMI, na.rm=T))
 ```
 
@@ -227,11 +268,28 @@ plot(density(BMI, na.rm=T))
 
 ## Saving plots
 
+ - R can output graphics in a number of formats: pdf, jpeg, png etc
+ - In RStudio you can also save your plots via the "Export" menu in the "Plots" tab.
+ - The following code opens a PDF file, writes a histogram to that file, and then
+ closes the connection to the file.
+ 
 ```{r}
-pdf(file='bmi_historgram.pdf', height = 6, width = 6)
+## Open PDF file for writing, and specify dimensions
+## Note that PDF files use dimensions based on inches, whereas png and 
+## jpeg files use pixels
+pdf(file = 'bmi_histogram.pdf', height = 6, width = 6)
+
+## Write histogram of BMI to file
 hist(BMI)
+
+## Close the file
+dev.off()
+
+## For multi-plot figures, you need to adjust the dimensions
+pdf(file = 'bmi_histogram_density.pdf', height = 6, width = 12)
+par(mfrow = c(1, 2))
+hist(BMI)
+plot(density(BMI, na.rm=T))
 dev.off()
 ```
-
-
 
