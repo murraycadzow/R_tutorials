@@ -87,26 +87,26 @@ table(ETHCLASS)
 ## Include the NA information
 table(ETHCLASS, useNA = 'always')
 
-## Gout status
-table(GOUT)
+## Diabetes status
+table(DIABETES)
 
-## Two-way table of ethnicity and gout
-table(ETHCLASS, GOUT)
+## Two-way table of ethnicity and diabetes
+table(ETHCLASS, DIABETES)
 
 ## Add dimension names
-table(ETHCLASS, GOUT, dnn = c("Ethnicity","Gout"))
+table(ETHCLASS, DIABETES, dnn = c("Ethnicity","Diabetes"))
 
 ## We can also flip this via the transpose operator:
-t( table(ETHCLASS, GOUT) )
+t( table(ETHCLASS, DIABETES) )
 
 ## Use the prop.table command to calculate proportions (cells sum to 1):
-prop.table( table(ETHCLASS, GOUT) )
+prop.table( table(ETHCLASS, DIABETES) )
 
 ## You can also calculate proportions across rows (rows sum to 1):
-prop.table( table(ETHCLASS, GOUT), 1 )
+prop.table( table(ETHCLASS, DIABETES), 1 )
 
 ## or down columns (columns sum to 1):
-prop.table( table(ETHCLASS, GOUT), 2 )
+prop.table( table(ETHCLASS, DIABETES), 2 )
 ```
 
 ---
@@ -158,12 +158,12 @@ boxplot(BMI)
 ## Boxplots - continuous & categorical variables
 
 ```{r}
-## Boxplot of BMI vs Gout Status
-boxplot(BMI ~ GOUT, xlab = "Gout status", ylab = "BMI", main = "BMI vs gout status")
+## Boxplot of BMI vs Diabetes Status
+boxplot(BMI ~ DIABETES, xlab = "Diabetes status", ylab = "BMI", main = "BMI vs diabetes status")
 
 ## Change the colours and box widths
 ## Note: ```col``` defines the box colour, and ```border``` defines the border colour
-boxplot(BMI ~ GOUT, xlab = "Gout status", ylab = "BMI", main = "BMI vs gout status",
+boxplot(BMI ~ DIABETES, xlab = "Diabetes status", ylab = "BMI", main = "BMI vs diabetes status",
         boxwex = 0.2, col = "lightblue", border = "blue")
 ```
 
@@ -199,31 +199,31 @@ table(ETHCLASS)
 ## Represent this information as a barplot
 barplot( table(ETHCLASS) )
 
-## Generate 2-way tabe for ethnicity and gout
-table(ETHCLASS, GOUT)
+## Generate 2-way tabe for ethnicity and diabetes
+table(ETHCLASS, DIABETES)
 
 ## Represent this information as a (stacked) barplot
-barplot( table(ETHCLASS, GOUT), xlab = "Gout status", ylab = "Frequency" )
+barplot( table(ETHCLASS, DIABETES), xlab = "Diabetes status", ylab = "Frequency" )
 
 ## Same information, unstacked
-barplot( table(ETHCLASS, GOUT), xlab = "Gout status", ylab = "Frequency", beside = TRUE )
+barplot( table(ETHCLASS, DIABETES), xlab = "Diabetes status", ylab = "Frequency", beside = TRUE )
 
 ## What is we want to look at it the other way around?
 ## Use the transpose function, t(), to flip the table
-t( table(ETHCLASS, GOUT) )
+t( table(ETHCLASS, DIABETES) )
 
 ## Then make a barplot
-barplot( t(table(ETHCLASS, GOUT)), beside = TRUE )
+barplot( t(table(ETHCLASS, DIABETES)), beside = TRUE )
 
 ## What if we're more interested in proportions?
-prop.table( table(ETHCLASS, GOUT) )
+prop.table( table(ETHCLASS, DIABETES) )
 
 ## Make the corresponding barplot
-barplot( prop.table(table(ETHCLASS, GOUT)) )
+barplot( prop.table(table(ETHCLASS, DIABETES)) )
 
 ## Or we can make the columns sum to one
-prop.table( table(ETHCLASS, GOUT), 2)
-barplot( prop.table(table(ETHCLASS, GOUT), 2) )
+prop.table( table(ETHCLASS, DIABETES), 2)
+barplot( prop.table(table(ETHCLASS, DIABETES), 2) )
 ```
 
 ---
