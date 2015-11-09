@@ -1,0 +1,68 @@
+---
+title: 'R: Loops and Functions'
+author: "Murray Cadzow"
+date: "9 November 2015"
+output: html_document
+---
+
+# Lesson 8:
+
+This lesson will cover the following:
+
+- Functions
+- Control Statements
+- Loops
+
+## Functions
+
+As you have been using R you will have noticed that many tasks have a particular function already available for you to use, such as mean or sd. In this section we are going to learn how to make our own functions
+
+
+We can define our own functions using the *function()* function
+
+Inside the parenthesis we define what variables are going to be passed to our function and curly braces contain the body of the function. If we want to return a value from our function we end it with  *return()*
+
+We can assign this new function to a variable
+
+To call our new function we now use the variable name and pass any required arguments
+
+```{r, eval = TRUE, echo = TRUE}
+double <- function( num ){
+  num <- num * 2
+  return( num )
+}
+
+double(2)
+```
+We can also have multiple arguments
+
+```{r, eval = TRUE, echo = TRUE}
+calcBMI <- function(height, weight){
+  return( weight / height ^2)
+}
+
+
+
+calcBMI( height = 1.68, weight = 73)
+
+h = c(1.68, 1.74, 1.55)
+w = c(73, 85, 65)
+
+calcBMI(height = h, weight = w)
+```
+
+**NB:** Variables declared only inside a function don't exist outside of the function
+
+## Control Statements
+
+Control statements allow us to use conditions to execute particular pieces of code based on the input
+
+We use the statements **if** or **else** to control what happens, else is only used after an if
+
+
+```{r}
+
+
+```
+
+## Loops
