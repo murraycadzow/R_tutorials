@@ -60,8 +60,8 @@ Covered in this lesson:
 
 2x2 CONTINGENCY
 ```{r}
-eyes_hair = data.frame("Brown"=c(6,24),"Other"=c(34,36))
-row.names(eyes_hair) = c("Blue","Other")
+eyes_hair = data.frame("Brown"=c(6, 24), "Other"=c(34, 36) )
+row.names(eyes_hair) = c("Blue", "Other")
 print(eyes_hair)
 ```
 
@@ -74,10 +74,11 @@ x$expected
 
 TWO FACTOR COLUMNS
 ```{r}
-y = chisq.test(mydata$SNP,mydata$GOUT)
+mydata = read.delim(file = "Tanya_Data.txt", header = TRUE, sep = "\t", stringsAsFactors=FALSE)
+y = chisq.test(mydata$SNP, mydata$GOUT)
 print(y)
 y$observed
-round(y$expected,0)
+round(y$expected, 0)
 ```
 
 ### t tests
@@ -89,14 +90,13 @@ round(y$expected,0)
       
 TWO GROUPS   
 ```{r}
-mydata = read.delim(file = "Tanya_Data.txt", header = TRUE, sep = "\t", stringsAsFactors=FALSE)
 t.test(mydata$URATE ~ mydata$GOUT)
 ```
 
 SAME GROUP
 ```{r}
 vinha = read.delim(file = "Vinha_Data.txt", header = TRUE, sep = "\t", stringsAsFactors=FALSE)
-t.test(vinha$UricAcid_B,vinha$UricAcid_30,paired=TRUE)
+t.test(y = vinha$UricAcid_B, x = vinha$UricAcid_30, paired=TRUE)
 ```
 
 &nbsp;
@@ -106,7 +106,7 @@ t.test(vinha$UricAcid_B,vinha$UricAcid_30,paired=TRUE)
 &nbsp;
 
 ```{r}
-t.test(vinha$UricAcid_B,vinha$UricAcid_30,paired=FALSE)
+t.test(y = vinha$UricAcid_B, x = vinha$UricAcid_30, paired=FALSE)
 ```
 
 ### Correlations
@@ -119,7 +119,7 @@ t.test(vinha$UricAcid_B,vinha$UricAcid_30,paired=FALSE)
       - [ 1] - as one variable goes up the other one does too
    
 ```{r}
-cor.test(mydata$STANCESTRY,mydata$GPANCESTRY)
+cor.test(mydata$STANCESTRY, mydata$GPANCESTRY)
 ```
 
 # Lesson 6
@@ -166,7 +166,7 @@ confint(simple)
    - you can plot this information easily to help yourself see the relationship
 ```{r}
 plot(x = mydata$BMI, y = mydata$URATE, xlab = "BMI (kg/m^2)", ylab = "Serum Urate (mmol/L)")
-abline(simple, col="red")
+abline(simple, col = "red" )
 ```
 
    - multiple linear regression &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **y = B~0~ + B~1~x~1~ + B~2~x~2~ + ... + B~n~x~n~ + error**
@@ -203,7 +203,7 @@ simpleLOG = glm(formula = GOUTAFFSTAT ~ BMI, data = mydata, family = binomial)
 ```
 
 ```{r}
-mydata$GOUTAFFSTAT = mydata$GOUTAFFSTAT-1
+mydata$GOUTAFFSTAT = mydata$GOUTAFFSTAT - 1
 ```
 
 ```{r}
@@ -216,8 +216,8 @@ summary(simpleLOG)
       - this is how we get an **odds ratio**
 
 ```{r}
-exp(coef(simpleLOG))
-exp(confint(simpleLOG))
+exp(coef(simpleLOG) )
+exp(confint(simpleLOG) )
 ```
 
    - exp(Estimate) = the odds ratio and centres around 1
@@ -233,16 +233,30 @@ exp(confint(simpleLOG))
 ```{r}
 Euro_multiple = glm(formula = GOUTAFFSTAT ~ BMI + AGE + SNP, data = mydata, subset = ETHCLASS == "European")
 summary(Euro_multiple)
-exp(coef(Euro_multiple))
-exp(confint(Euro_multiple))
+exp(coef(Euro_multiple) )
+exp(confint(Euro_multiple) )
 ```
 
-# Lesson 7 
+### Interactions
 
-Covered in this lesson:
+   - testing whether the effect of one variable is modified by another variable
+      - for instance a gene increases gout risk 2-fold in a population.
+      - eating pies also increases gout risk by 2-fold.
+      - you would assume having the gene and eating pies would increase your risk ~ 4-fold
+      - when you test this interaction it turns out eating pies and having the gene decreases your risk 1.5-fold
+         - what is going on? I dunno, but pies are delicious.
 
-- R functions
+&nbsp;
 
-- for loops
+   - you can test for interactions by adding an interaction term to your regression model
+   
+```{r}
+interaction = glm(formula = GOUTAFFSTAT ~ BMI*SEX, data = mydata, family = binomial)
+summary(interaction)
+exp(coef(interaction))
+exp(confint(interaction))
+```
 
-- apply functions
+
+
+   
