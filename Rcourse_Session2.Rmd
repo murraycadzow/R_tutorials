@@ -44,11 +44,41 @@ Be wary of claiming something is of importance solely on the basis of a p value 
 
 Covered in this lesson:
 
+   - chi-squared
+
    - t tests
 
    - correlations
 
-   - chi-squared
+### Chi-squared
+
+   - tests whether what you *expect to get* fits with what you *actually got*
+   
+      - you need either:
+         - a 2x2 contingency table
+         - or two data columns with factor variables
+
+2x2 CONTINGENCY
+```{r}
+eyes_hair = data.frame("Brown"=c(6,24),"Other"=c(34,36))
+row.names(eyes_hair) = c("Blue","Other")
+print(eyes_hair)
+```
+
+```{r}
+x = chisq.test(eyes_hair)
+print(x)
+x$observed
+x$expected
+```
+
+TWO FACTOR COLUMNS
+```{r}
+y = chisq.test(mydata$SNP,mydata$GOUT)
+print(y)
+y$observed
+round(y$expected,0)
+```
 
 ### t tests
 
@@ -59,7 +89,7 @@ Covered in this lesson:
       
 TWO GROUPS   
 ```{r}
-mydata = read.delim(file = "dummy_data2.txt", header = TRUE, sep = "\t", stringsAsFactors=FALSE)
+mydata = read.delim(file = "Tanya_Data.txt", header = TRUE, sep = "\t", stringsAsFactors=FALSE)
 t.test(mydata$URATE ~ mydata$GOUT)
 ```
 
@@ -90,36 +120,6 @@ t.test(vinha$UricAcid_B,vinha$UricAcid_30,paired=FALSE)
    
 ```{r}
 cor.test(mydata$STANCESTRY,mydata$GPANCESTRY)
-```
-
-### Chi-squared
-
-   - tests whether what you *expect to get* fits with what you *actually got*
-   
-      - you need either:
-         - a 2x2 contingency table
-         - or two data columns with factor variables
-
-2x2 CONTINGENCY
-```{r}
-eyes_hair = data.frame("Brown"=c(6,24),"Other"=c(34,36))
-row.names(eyes_hair) = c("Blue","Other")
-print(eyes_hair)
-```
-
-```{r}
-x = chisq.test(eyes_hair)
-print(x)
-x$observed
-x$expected
-```
-
-TWO FACTOR COLUMNS
-```{r}
-y = chisq.test(mydata$SNP,mydata$GOUT)
-print(y)
-y$observed
-round(y$expected,0)
 ```
 
 # Lesson 6
@@ -157,9 +157,9 @@ confint(simple)
 ```
 
    - Estimate = a beta value and centres around 0
-      - [< 0] - as one variable goes up the other goes down
+      - [< 0] - as the explanatory variable goes up the response variable goes down
       - [ 0 ] - no relationship at all
-      - [> 0] - as one variable goes up the other one does too
+      - [> 0] - as the explanatory variable goes up the response variable does too
       
    - if the confidence interval of the estimate crosses zero there is no significant relationship between your two variables, *check your p value and confidence interval are saying the same thing!!*
 
@@ -209,9 +209,22 @@ mydata$GOUTAFFSTAT = mydata$GOUTAFFSTAT-1
 ```{r}
 simpleLOG = glm(formula = GOUTAFFSTAT ~ BMI, data = mydata, family = binomial)
 summary(simpleLOG)
+```
+
+   - the estimates produced by a *glm* are just like those produced by a *lm*
+   - because our response variable is the log(yes/no) we need to convert our estimates from the log scale back to the response scale
+      - this is how we get an **odds ratio**
+
+```{r}
 exp(coef(simpleLOG))
 exp(confint(simpleLOG))
 ```
+
+   - exp(Estimate) = the odds ratio and centres around 1
+      - [< 1] - as the explanatory variable goes up the chance of "yes" happening goes down: protective response
+      - [ 1 ] - no relationship at all
+      - [> 1] - as the explanatory variable goes up the chance of "yes" happening goes up: risk response
+   - if the confidence interval of the exp(estimate) crosses 1 there is no significant relationship between your two variables, *check your p value and confidence interval are saying the same thing!!*
 
    - you can also run multiple logistic regression just the same as in a linear model
    
