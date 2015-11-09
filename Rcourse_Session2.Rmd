@@ -1,0 +1,235 @@
+---
+title: "Session 2: Modelling/Analysis"
+author: "Tanya Flynn"
+output: html_document
+---
+
+### A note on P values
+A p value tests whether your data fits with your null hypothesis, or in other words whether you are likely to get the answer you got by chance alone, it is a statistical tool, not a definitive answer.
+
+&nbsp;&nbsp;&nbsp;**null hypothesis** - your null hypothesis will always be "there is nothing exciting going on"
+   
+&nbsp;&nbsp;&nbsp;**alternate hypothesis** - what you actually think is going on
+
+#### Statistical Significance
+Convention makes p < 0.05 the threshold for statistical significance
+   - this value means if your null hypothesis is true you would see a result like yours in 5 out of every 100 tests
+   - because 5 out of 100 is not often you assume your null hypothesis is not true
+      - without replication/validation you cannot say whether you are right in this assumption
+
+For instance, if I have a population of 1000 people, 300 have brown hair, 400 have blue eyes and I want to test if having blue eyes makes you more or less likely to have brown hair (for some reason).
+
+- blue eyes and brown hair being *unrelated* is my **null hypothesis**
+- blue eyes and brown hair being *related* is my **alternate hypothesis**
+
+      - I choose one hundred people randomly from the group
+      - I would expect to get approximately 12 people with both blue eyes and brown hair
+         - This expectation assumes that there is nothing dependent between having blue eyes and brown hair
+      - What if in this population most people with blue eyes don't have brown hair?
+         - When I pick the people randomly I get less people with both blue eyes and brown hair than I expect, say I get 6
+      
+      - 12 and 6 are quite different to each other, p = 0.01
+         - This p value says that if I did this same test 100 times I would only see a result this extreme by chance once.
+         - That means it is unlikely my **null hypothesis** (of blue eyes/brown hair being unrelated) is correct, so I can reject it and *assume* the **alternate hypothesis** is true.
+         
+#### Clinical Significance
+Clinical significance is when something has an effect large enough that it has some kind of relevance to real life.
+
+   - statistical significance does not rely on clinical significance
+   - something could have a very different effect to what is expected, but still not have an effect large enough to matter in a clinical setting
+   
+Be wary of claiming something is of importance solely on the basis of a p value < 0.05
+
+# Lesson 5
+
+Covered in this lesson:
+
+   - t tests
+
+   - correlations
+
+   - chi-squared
+
+### t tests
+
+   - A way to test whether the mean of two variables is different
+   
+      - this could be between two groups (cases vs controls)
+      - or this could be in the same group (before or after)
+      
+TWO GROUPS   
+```{r}
+mydata = read.delim(file = "dummy_data2.txt", header = TRUE, sep = "\t", stringsAsFactors=FALSE)
+t.test(mydata$URATE ~ mydata$GOUT)
+```
+
+SAME GROUP
+```{r}
+vinha = read.delim(file = "Vinha_Data.txt", header = TRUE, sep = "\t", stringsAsFactors=FALSE)
+t.test(vinha$UricAcid_B,vinha$UricAcid_30,paired=TRUE)
+```
+
+&nbsp;
+
+*if you have data from multiple time points of the same sample your t test needs to be paired - this takes out any between sample variations*
+
+&nbsp;
+
+```{r}
+t.test(vinha$UricAcid_B,vinha$UricAcid_30,paired=FALSE)
+```
+
+### Correlations
+
+   - testing whether two measures are linearly related to each other, or how similar the values in two variables are for each person/data point
+   
+   - a correlation coefficient ranges from -1 to 1
+      - [-1] - as one variable goes up the other goes down
+      - [ 0] - no correlation at all
+      - [ 1] - as one variable goes up the other one does too
+   
+```{r}
+cor.test(mydata$STANCESTRY,mydata$GPANCESTRY)
+```
+
+### Chi-squared
+
+   - tests whether what you *expect to get* fits with what you *actually got*
+   
+      - you need either:
+         - a 2x2 contingency table
+         - or two data columns with factor variables
+
+2x2 CONTINGENCY
+```{r}
+eyes_hair = data.frame("Brown"=c(6,24),"Other"=c(34,36))
+row.names(eyes_hair) = c("Blue","Other")
+print(eyes_hair)
+```
+
+```{r}
+x = chisq.test(eyes_hair)
+print(x)
+x$observed
+x$expected
+```
+
+TWO FACTOR COLUMNS
+```{r}
+y = chisq.test(mydata$SNP,mydata$GOUT)
+print(y)
+y$observed
+round(y$expected,0)
+```
+
+# Lesson 6
+
+Covered in this lesson:
+
+   - linear regression
+
+   - logistic regression
+
+   - covariates
+
+   - interactions
+
+### Linear regression
+
+   - tests whether one measure has a linear relationship to another
+   - builds an equation representing this relationship
+   
+      - simple linear regression equation: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**y = B~0~ + B~1~x~1~ + error**   
+   
+&nbsp;      &nbsp;**y** - is the response variable, what you want to predict
+
+&nbsp;      &nbsp;**B~0~** - the intercept of the line
+
+&nbsp;      &nbsp;**B~1~** - the slope of the line
+
+&nbsp;      &nbsp;**x~1~** - the explanatory variable
+
+
+```{r}
+simple = lm(formula = URATE ~ BMI, data = mydata)
+summary(simple)
+confint(simple)
+```
+
+   - Estimate = a beta value and centres around 0
+      - [< 0] - as one variable goes up the other goes down
+      - [ 0 ] - no relationship at all
+      - [> 0] - as one variable goes up the other one does too
+      
+   - if the confidence interval of the estimate crosses zero there is no significant relationship between your two variables, *check your p value and confidence interval are saying the same thing!!*
+
+   - you can plot this information easily to help yourself see the relationship
+```{r}
+plot(x = mydata$BMI, y = mydata$URATE, xlab = "BMI (kg/m^2)", ylab = "Serum Urate (mmol/L)")
+abline(simple, col="red")
+```
+
+   - multiple linear regression &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **y = B~0~ + B~1~x~1~ + B~2~x~2~ + ... + B~n~x~n~ + error**
+      - when you have more than one explanatory variable
+      
+```{r}
+multiple = lm(formula = URATE ~ BMI + AGE, data = mydata)
+summary(multiple)
+confint(multiple)
+```
+
+   - notice that the estimate for BMI is now slightly different from before: 0.0044121 vs 0.0046408
+      - this is because a multiple regression adjusts the answer of every variable by the effect of every other variable
+      - sometimes this adjustment can result in a *loss* of significance for a variable
+      - sometimes this adjustment can result in a *gain* of significance for a variable
+
+### Logistic regression
+
+   - tests whether a variable influences an outcome
+   - works in a similar way to linear regression, but with a categorical variable as the response variable
+      
+      - simple logistic regression equation: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**log(yes/no) = B~0~ + B~1~x~1~**   
+   
+&nbsp;      &nbsp;**log(yes/no)** - is the odds of success, where yes and no are the presence or absence of the outcome you are interested in
+
+&nbsp;      &nbsp;**B~0~** - the intercept of the line
+
+&nbsp;      &nbsp;**B~1~** - the slope of the line
+
+&nbsp;      &nbsp;**x~1~** - the explanatory variable
+
+```{r, error=TRUE}
+simpleLOG = glm(formula = GOUTAFFSTAT ~ BMI, data = mydata, family = binomial)
+```
+
+```{r}
+mydata$GOUTAFFSTAT = mydata$GOUTAFFSTAT-1
+```
+
+```{r}
+simpleLOG = glm(formula = GOUTAFFSTAT ~ BMI, data = mydata, family = binomial)
+summary(simpleLOG)
+exp(coef(simpleLOG))
+exp(confint(simpleLOG))
+```
+
+   - you can also run multiple logistic regression just the same as in a linear model
+   
+   - you can also run regressions on only a subset of data within the regression command
+   
+```{r}
+Euro_multiple = glm(formula = GOUTAFFSTAT ~ BMI + AGE + SNP, data = mydata, subset = ETHCLASS == "European")
+summary(Euro_multiple)
+exp(coef(Euro_multiple))
+exp(confint(Euro_multiple))
+```
+
+# Lesson 7 
+
+Covered in this lesson:
+
+- R functions
+
+- for loops
+
+- apply functions
