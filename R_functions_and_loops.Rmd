@@ -61,8 +61,36 @@ We use the statements **if** or **else** to control what happens, else is only u
 
 
 ```{r}
+bmi <- 21
+
+if(bmi > 30){
+  print("obese")
+} else if (bmi > 25){
+  print("overweight")
+} else if (bmi > 20){
+  print("healthy")
+} else {
+  print("underweight")
+}
 
 
 ```
 
+There is also the *ifelse()* function that can be used
+
+it takes the format ifelse( condition, if true, if false)
+
 ## Loops
+
+Loops enable us to do the same operation many times until the termination condition is met
+
+The most common loop is the **for** loop
+
+Each iteration of the loop the continuation condition is evaluated 
+
+```{r, eval = TRUE, echo = TRUE}
+for( num in 1:5){
+  print( num )
+}
+
+```
