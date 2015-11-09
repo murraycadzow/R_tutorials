@@ -1,0 +1,1001 @@
+PATIENT	AGE	SEX	DIABETES	URATE	BMI	GOUT	GOUTAFFSTAT	ETHCLASS	SNP	GPANCESTRY	STANCESTRY
+1	50	Female	No	0.3	30.3	NA	NA	East Polynesian	GG	0.5	0.475
+2	47	Female	No	0.4	34.3	Control	1	European	AG	0.75	0.705
+3	55	Female	No	0.38	29.6	Control	1	East Polynesian	GG	1	0.995
+4	52	Female	No	0.36	36.3	Control	1	East Polynesian	AG	1	0.996
+5	50	Male	No	0.59	30.7	Control	1	East Polynesian	AG	0.5	0.334
+6	57	Female	No	0.31	26.7	Gout	2	European	AG	1	0.85
+7	63	Male	Yes	0.44	27.8	Gout	2	East Polynesian	AG	0.75	0.6
+8	47	Female	No	0.32	21.8	Control	1	European	AA	1	0.85
+9	54	Male	No	0.63	31.4	NA	NA	European	AG	0.75	0.707
+10	54	Female	No	0.36	25.1	Gout	2	East Polynesian	AA	0.5	0.35
+11	49	Male	NA	0.45	31.1	NA	NA	European	AG	0.5	0.248
+12	58	Female	NA	0.3	21.7	Control	1	European	AA	0.75	0.641
+13	53	Female	Yes	0.33	27	Control	1	European	AG	1	0.85
+14	59	Female	No	0.37	25.1	Control	1	East Polynesian	AG	1	0.939
+15	64	Male	No	0.46	25.7	Gout	2	European	AA	0.75	0.565
+16	49	Female	No	0.36	20.1	Control	1	European	AG	1	0.981
+17	64	Female	No	0.42	24.4	Control	1	East Polynesian	AA	1	0.85
+18	61	Male	No	0.46	37.9	Control	1	East Polynesian	GG	1	0.996
+19	58	Male	Yes	0.49	27.9	Gout	2	European	AA	0.875	0.803
+20	56	Female	No	0.37	35.3	Gout	2	European	AG	1	0.85
+21	51	Female	No	0.32	31.9	Control	1	European	AA	0.125	NA
+22	47	Female	NA	0.34	33.2	Gout	2	European	AG	1	0.85
+23	53	Female	No	0.34	28.2	Control	1	European	AG	1	0.952
+24	51	Male	No	0.45	29.5	Gout	2	European	AA	0.25	0.066
+25	51	Female	NA	0.34	28.8	Gout	2	European	GG	1	0.85
+26	52	Female	No	0.29	23.7	Control	1	European	AG	1	0.996
+27	49	Female	NA	0.36	27.2	Control	1	European	AG	1	0.984
+28	50	Female	Yes	0.3	20.3	Gout	2	European	AG	1	0.987
+29	52	Female	No	0.31	25.8	Control	1	European	AG	1	0.85
+30	52	Female	No	0.39	41.9	Control	1	European	AA	1	0.85
+31	53	Female	No	0.39	29.6	Control	1	West Polynesian	GG	1	0.971
+32	63	Female	No	0.27	24.8	Control	1	European	AG	1	0.85
+33	53	Male	No	0.48	33.6	Control	1	European	AA	1	0.939
+34	46	Female	No	0.33	27.5	Gout	2	European	AA	0.5	0.35
+35	45	Male	NA	0.54	26.6	Gout	2	European	AA	1	0.986
+36	51	Female	No	0.43	32.5	Control	1	European	AA	0.25	0.109
+37	54	Female	No	0.35	27.4	Gout	2	European	AG	1	0.99
+38	57	Female	No	0.4	32.2	Control	1	European	GG	0.5	0.25
+39	59	Female	No	0.39	26	Gout	2	European	AA	1	0.994
+40	49	Female	No	0.17	24.3	Control	1	European	AA	1	0.957
+41	52	Female	No	0.32	23.9	Gout	2	European	GG	1	0.996
+42	60	Male	No	0.49	24.3	Control	1	East Polynesian	AG	0.75	0.641
+43	63	Female	NA	0.29	22.4	Gout	2	European	AG	1	0.986
+44	47	Female	No	0.24	32.4	Control	1	European	AA	0.75	0.603
+45	56	Male	No	0.45	34	Control	1	East Polynesian	AG	1	0.85
+46	53	Male	NA	0.55	31	Gout	2	East Polynesian	GG	0.5	0.338
+47	51	Female	No	0.42	32.2	Control	1	European	AG	0.5	0.35
+48	60	Male	No	0.51	32.2	Control	1	European	AA	1	0.995
+49	55	Female	NA	0.41	34.5	Gout	2	European	AG	1	0.989
+50	47	Female	No	0.27	23.8	Gout	2	East Polynesian	GG	1	0.85
+51	62	Female	No	0.34	25.7	Gout	2	European	AG	0.75	0.606
+52	59	Female	No	0.42	24	Control	1	European	AA	1	0.85
+53	62	Male	No	0.48	33.4	Gout	2	East Polynesian	GG	1	0.996
+54	61	Male	No	0.59	25.4	Gout	2	European	AA	1	0.85
+55	56	Male	NA	0.56	32.4	Gout	2	European	AG	0.75	0.711
+56	60	Male	No	0.64	31.2	Gout	2	European	AA	1	0.952
+57	50	Male	No	0.46	26.4	Control	1	East Polynesian	GG	0.5	0.416
+58	60	Female	No	0.41	24.2	Control	1	European	AA	0.5	0.35
+59	60	Female	No	0.35	25.8	Control	1	European	AA	0.5	0.488
+60	60	Female	No	0.43	45.5	Control	1	European	AG	1	0.973
+61	47	Female	NA	0.26	24.5	Control	1	European	AG	0.5	0.35
+62	50	Female	No	0.43	33.5	Control	1	European	GG	0.25	0.1
+63	61	Female	Yes	0.3	29.1	Control	1	European	AA	0.125	NA
+64	52	Male	No	0.46	26.2	Control	1	European	AG	0.75	0.6
+65	63	Male	No	0.49	28.9	Control	1	European	AG	1	0.981
+66	60	Male	No	0.44	26.8	Control	1	East Polynesian	AG	1	0.952
+67	60	Female	NA	0.23	20.2	Control	1	West Polynesian	AG	1	0.958
+68	61	Female	No	0.34	30.6	Control	1	European	AG	0.25	0.156
+69	51	Male	No	0.56	25.1	Control	1	East Polynesian	AG	1	0.878
+70	59	Female	No	0.27	32.8	Control	1	East Polynesian	AA	0.75	0.711
+71	64	Male	No	0.59	30.8	Control	1	European	AG	1	0.906
+72	50	Female	No	0.34	23.6	Control	1	East Polynesian	AG	1	0.989
+73	53	Female	No	0.37	38.8	Control	1	East Polynesian	GG	1	0.996
+74	57	Male	Yes	0.44	24.5	Gout	2	West Polynesian	AG	1	0.939
+75	58	Female	Yes	0.34	25.9	Gout	2	East Polynesian	GG	1	0.996
+76	64	Female	Yes	0.37	24.9	Control	1	European	AA	0.5	0.488
+77	54	Female	No	0.39	37.9	Gout	2	European	AG	1	0.85
+78	49	Female	No	0.31	30.5	Control	1	East Polynesian	GG	0.5	0.35
+79	56	Female	No	0.21	37	Gout	2	European	GG	1	0.85
+80	47	Female	No	0.29	25.8	Control	1	European	AG	1	0.906
+81	54	Female	No	0.4	20	Gout	2	European	GG	1	0.991
+82	64	Male	No	0.44	23.4	Control	1	European	AG	1	0.992
+83	59	Male	No	0.52	29.2	Control	1	European	AA	1	0.984
+84	58	Male	No	0.51	32.1	Control	1	European	AA	1	0.973
+85	63	Female	Yes	0.26	22.9	Control	1	West Polynesian	GG	0.25	0.072
+86	59	Female	No	0.39	29.2	Gout	2	European	AG	0.5	0.35
+87	45	Female	No	0.35	27.4	Gout	2	East Polynesian	AG	1	0.879
+88	60	Female	No	0.39	31.9	Control	1	European	AG	0.75	0.6
+89	58	Male	No	0.55	32.1	Control	1	European	AG	1	0.996
+90	46	Male	No	0.46	26.7	NA	NA	European	AG	1	0.966
+91	56	Female	No	0.34	28.2	Gout	2	Mixed Polynesian	GG	1	0.85
+92	63	Female	Yes	0.33	22	Gout	2	European	AA	0.75	0.609
+93	49	Female	No	0.36	44.3	Control	1	European	AA	1	0.981
+94	54	Female	No	0.42	22.3	Control	1	East Polynesian	AG	1	0.908
+95	59	Female	No	0.37	26.3	Gout	2	European	AA	0.5	0.475
+96	52	Female	No	0.35	30.6	Control	1	East Polynesian	AG	1	0.958
+97	47	Female	NA	0.28	22.3	Control	1	European	AA	1	0.966
+98	50	Female	No	0.36	25.7	Control	1	East Polynesian	AG	0.25	0.112
+99	62	Female	No	0.39	20.6	Control	1	East Polynesian	AG	0.75	0.611
+100	49	Female	Yes	0.34	27.2	Control	1	West Polynesian	GG	1	0.85
+101	49	Male	No	0.45	25.2	Gout	2	East Polynesian	AG	1	0.987
+102	61	Female	No	0.43	25.8	Gout	2	East Polynesian	GG	1	0.925
+103	57	Male	No	0.45	30.6	Control	1	East Polynesian	GG	0.5	0.475
+104	60	Female	No	0.32	30.5	Control	1	East Polynesian	AG	1	0.85
+105	58	Male	No	0.57	43.7	Control	1	West Polynesian	AG	1	0.996
+106	46	Female	No	0.3	25.4	Gout	2	East Polynesian	GG	0.5	0.35
+107	49	Female	Yes	0.36	23.5	Control	1	West Polynesian	GG	0.5	0.276
+108	64	Female	No	0.43	28	Control	1	East Polynesian	GG	0.5	0.277
+109	48	Female	No	0.33	37.8	Control	1	East Polynesian	AG	0.875	0.806
+110	54	Male	NA	0.71	30.4	Control	1	East Polynesian	AG	1	0.984
+111	63	Female	No	0.36	25.3	Control	1	European	AG	1	0.881
+112	58	Male	No	0.48	30.8	Gout	2	East Polynesian	GG	0.125	0.022
+113	52	Male	No	0.5	31.3	Control	1	European	AG	1	0.973
+114	46	Female	No	0.32	27.5	Gout	2	East Polynesian	AG	1	0.984
+115	60	Female	Yes	0.34	31.5	Control	1	West Polynesian	GG	1	0.908
+116	57	Female	No	0.42	25.2	Control	1	East Polynesian	AG	1	0.996
+117	49	Male	No	0.44	37	Gout	2	European	GG	1	0.994
+118	45	Female	NA	0.43	27.7	Control	1	West Polynesian	GG	0.5	0.475
+119	58	Female	Yes	0.37	25.5	Gout	2	Mixed Polynesian	GG	1	0.996
+120	49	Female	No	0.23	30.3	Gout	2	European	AG	1	0.85
+121	52	Female	No	0.4	27.9	Control	1	West Polynesian	AG	0.75	0.65
+122	62	Male	No	0.47	32.1	Control	1	West Polynesian	GG	1	0.996
+123	53	Male	Yes	0.48	28	Control	1	European	GG	0.75	0.6
+124	55	Female	No	0.23	25.3	Control	1	European	AG	1	0.908
+125	51	Female	NA	0.19	21.9	Control	1	East Polynesian	AA	0.5	0.35
+126	48	Male	Yes	0.49	35.8	NA	NA	East Polynesian	AG	1	0.995
+127	62	Female	No	0.37	25.5	Control	1	West Polynesian	AG	1	0.939
+128	47	Male	No	0.48	29.8	Gout	2	West Polynesian	GG	1	0.925
+129	61	Female	No	0.39	26.9	Control	1	East Polynesian	GG	0.125	0.042
+130	64	Female	No	0.39	31.3	Control	1	West Polynesian	GG	1	0.85
+131	57	Male	NA	0.49	25.6	Gout	2	East Polynesian	AG	1	0.85
+132	50	Male	No	0.46	36.8	Gout	2	East Polynesian	AG	0.25	0.075
+133	50	Female	No	0.28	22.3	Control	1	European	AA	0.75	0.742
+134	58	Female	No	0.35	33.6	Gout	2	European	GG	1	0.883
+135	54	Male	No	0.44	32.2	Gout	2	European	AA	1	0.885
+136	56	Male	Yes	0.49	28.3	Control	1	European	AG	1	0.993
+137	62	Male	No	0.47	33.2	Gout	2	European	AA	0.125	0.023
+138	62	Female	No	0.37	31.8	Control	1	European	GG	1	0.997
+139	48	Female	No	0.34	30.7	NA	NA	East Polynesian	AA	1	0.91
+140	64	Female	No	0.4	25.8	Gout	2	European	AA	1	0.85
+141	63	Female	No	0.3	21.2	Control	1	East Polynesian	AG	0.5	0.352
+142	62	Male	No	0.48	38.6	Gout	2	European	AG	0.75	0.566
+143	54	Female	Yes	0.25	19.1	Gout	2	European	AG	0.875	0.812
+144	64	Female	No	0.34	24.2	Gout	2	East Polynesian	AG	1	0.85
+145	61	Female	No	0.33	23.2	Control	1	European	AG	0.75	0.614
+146	63	Female	NA	0.42	30.6	Gout	2	West Polynesian	AG	0.125	0.045
+147	62	Male	Yes	0.49	32.3	NA	NA	West Polynesian	AA	0.5	0.35
+148	47	Female	NA	0.4	27.8	Gout	2	European	AG	1	0.986
+149	55	Female	No	0.37	19.2	Control	1	European	AA	1	0.958
+150	56	Female	No	0.33	24	Control	1	European	AA	1	0.994
+151	60	Female	Yes	0.24	23.3	Gout	2	East Polynesian	GG	1	0.927
+152	54	Female	Yes	0.29	28.3	Control	1	European	AG	1	1
+153	49	Male	No	0.53	34	Gout	2	East Polynesian	AG	0.75	0.717
+154	56	Male	No	0.51	29.4	Control	1	East Polynesian	AG	1	0.993
+155	54	Female	No	0.39	19.6	NA	NA	European	AA	0.8	0.743
+156	55	Male	No	0.64	27.5	Control	1	East Polynesian	GG	0.5	0.339
+157	61	Female	No	0.4	41.6	Gout	2	East Polynesian	AG	1	0.971
+158	53	Female	No	0.32	27.1	Gout	2	East Polynesian	AA	0.75	0.619
+159	45	Female	Yes	0.42	36.6	Gout	2	European	GG	0.125	0.047
+160	60	Female	No	0.42	25.4	Gout	2	East Polynesian	GG	0.125	0.025
+161	50	Female	No	0.41	35.7	Control	1	East Polynesian	GG	1	0.974
+162	62	Female	No	0.39	36.5	Gout	2	East Polynesian	AG	1	0.953
+163	53	Male	No	0.55	30.4	Gout	2	East Polynesian	AG	0.875	0.746
+164	54	Female	No	0.33	25.1	Control	1	East Polynesian	GG	0.5	0.49
+165	55	Male	Yes	0.54	29.1	Gout	2	East Polynesian	GG	0.25	0.082
+166	58	Male	No	0.45	27.2	NA	NA	East Polynesian	GG	1	0.995
+167	63	Male	No	0.45	34.4	Control	1	East Polynesian	AA	1	0.939
+168	52	Female	No	0.28	22.4	NA	NA	East Polynesian	AG	1	0.85
+169	64	Male	No	0.48	30.8	Gout	2	West Polynesian	AG	1	0.888
+170	54	Female	No	0.41	26.4	Control	1	East Polynesian	GG	0.75	0.6
+171	57	Female	No	0.27	26.4	Control	1	East Polynesian	AG	0.125	NA
+172	56	Male	No	0.64	28.6	Control	1	East Polynesian	AG	0.5	0.418
+173	49	Male	No	0.49	42.2	Control	1	East Polynesian	GG	1	0.99
+174	51	Female	No	0.35	35.6	Control	1	East Polynesian	GG	0.125	NA
+175	58	Female	No	0.34	18.8	Gout	2	East Polynesian	AG	1	0.993
+176	64	Male	No	0.55	35.2	Control	1	East Polynesian	GG	1	0.981
+177	63	Female	Yes	0.29	25.4	Control	1	West Polynesian	AA	1	0.977
+178	60	Male	Yes	0.47	30.4	Control	1	East Polynesian	GG	1	0.981
+179	60	Female	No	0.4	30.2	Control	1	East Polynesian	GG	1	0.912
+180	45	Female	NA	0.18	21.1	Gout	2	East Polynesian	GG	1	0.953
+181	55	Male	Yes	0.46	22.5	Gout	2	East Polynesian	AG	1	0.988
+182	60	Female	No	0.31	25.4	Gout	2	East Polynesian	GG	1	0.89
+183	57	Female	No	0.31	23.6	Gout	2	East Polynesian	AG	0.375	0.221
+184	47	Female	Yes	0.24	36.5	Control	1	European	AG	1	0.85
+185	57	Female	No	0.35	21.2	Control	1	West Polynesian	GG	1	0.928
+186	62	Male	No	0.45	27.7	Gout	2	East Polynesian	AA	1	0.94
+187	59	Female	No	0.27	29.1	Gout	2	West Polynesian	GG	1	0.974
+188	49	Male	No	0.5	35.7	Gout	2	East Polynesian	GG	1	0.85
+189	53	Male	No	0.45	34.1	Control	1	West Polynesian	AG	1	0.85
+190	64	Female	No	0.43	22.2	Control	1	East Polynesian	GG	0.25	0.083
+191	53	Female	No	0.3	31.1	Gout	2	West Polynesian	AG	1	0.994
+192	58	Male	No	0.45	32.4	Control	1	West Polynesian	AG	1	0.85
+193	58	Male	NA	0.64	32.7	Control	1	Mixed Polynesian	GG	1	0.974
+194	57	Female	No	0.34	30.2	Control	1	West Polynesian	GG	0.75	0.574
+195	55	Female	No	0.26	34.1	Control	1	Mixed Polynesian	GG	0.75	0.723
+196	60	Female	Yes	0.37	28.2	Gout	2	East Polynesian	GG	1	0.94
+197	62	Female	No	0.3	27.2	Gout	2	European	AG	1	0.959
+198	47	Female	No	0.41	33.7	Gout	2	East Polynesian	AG	1	0.85
+199	57	Male	No	0.47	29.8	Control	1	West Polynesian	GG	0.75	0.724
+200	52	Female	No	0.3	22.8	Control	1	East Polynesian	AG	1	0.967
+201	64	Female	NA	0.4	21.5	Control	1	West Polynesian	AG	0.5	0.475
+202	58	Female	No	0.28	27.4	Control	1	European	AA	0.75	0.6
+203	47	Female	Yes	0.4	34.1	Control	1	East Polynesian	AA	0.75	0.725
+204	60	Male	No	0.48	27.2	Control	1	West Polynesian	AA	1	0.85
+205	57	Male	No	0.52	31.1	Control	1	European	AG	1	0.953
+206	60	Female	No	0.43	26.7	Gout	2	European	AG	1	0.85
+207	54	Female	No	0.35	32.9	Control	1	East Polynesian	GG	0.5	0.422
+208	59	Female	No	0.43	33.4	Control	1	European	AA	1	0.94
+209	53	Female	No	0.24	29.9	Gout	2	East Polynesian	AG	0.875	0.818
+210	56	Female	No	0.36	27.5	Control	1	East Polynesian	GG	1	1
+211	48	Female	No	0.42	24	Gout	2	East Polynesian	AG	0.625	0.503
+212	60	Female	Yes	0.42	33.4	Control	1	East Polynesian	AG	0.375	0.224
+213	50	Female	No	0.35	24.2	Control	1	East Polynesian	AG	0.5	0.254
+214	55	Female	No	0.35	27.6	Control	1	East Polynesian	GG	0.75	0.725
+215	54	Female	No	0.31	29.7	Gout	2	East Polynesian	GG	0.25	0.093
+216	61	Female	No	0.27	25.5	Control	1	East Polynesian	AG	1	1
+217	58	Female	No	0.43	26.7	Control	1	East Polynesian	AG	1	0.85
+218	58	Male	NA	0.56	27.1	Control	1	East Polynesian	AG	1	0.993
+219	64	Female	No	0.42	25.3	Gout	2	East Polynesian	GG	1	0.85
+220	50	Male	No	0.47	31	Gout	2	East Polynesian	AG	0.75	0.652
+221	60	Female	No	0.36	28.2	Gout	2	East Polynesian	AG	1	0.85
+222	62	Female	No	0.37	30.6	Gout	2	East Polynesian	GG	1	0.913
+223	56	Male	No	0.64	28.7	Control	1	East Polynesian	GG	0.25	0.156
+224	64	Male	No	0.46	28.9	Gout	2	East Polynesian	GG	1	0.984
+225	52	Female	NA	0.37	26.6	Gout	2	East Polynesian	GG	0.25	0.094
+226	57	Female	No	0.32	35	NA	NA	East Polynesian	GG	1	0.977
+227	46	Female	No	0.29	28.7	Gout	2	East Polynesian	GG	1	0.85
+228	46	Female	No	0.26	26.2	Control	1	European	AA	1	0.959
+229	59	Female	No	0.42	26.7	Control	1	East Polynesian	AG	1	0.986
+230	60	Female	No	0.41	36.2	NA	NA	East Polynesian	GG	1	1
+231	62	Male	No	0.51	27.5	Control	1	East Polynesian	GG	1	0.967
+232	54	Female	No	0.4	29.9	Control	1	East Polynesian	AG	1	0.954
+233	57	Female	No	0.32	28.9	Gout	2	East Polynesian	GG	1	0.987
+234	46	Female	No	0.29	28.8	Gout	2	East Polynesian	GG	1	0.984
+235	48	Male	No	0.51	41.2	Control	1	East Polynesian	GG	1	0.85
+236	59	Male	No	0.51	33.3	Gout	2	East Polynesian	GG	1	0.971
+237	62	Female	No	0.35	20.9	Control	1	East Polynesian	GG	1	1
+238	55	Male	No	0.48	26	Control	1	East Polynesian	GG	1	0.974
+239	59	Female	No	0.36	23.7	Gout	2	East Polynesian	AG	1	0.85
+240	61	Male	No	0.45	33.1	Control	1	European	AA	1	0.941
+241	58	Female	No	0.37	39	Control	1	European	AA	0.75	0.62
+242	57	Male	No	0.43	23.5	Gout	2	East Polynesian	GG	1	0.983
+243	64	Female	No	0.26	22.3	Control	1	West Polynesian	AG	1	0.991
+244	51	Female	No	0.33	32.5	Gout	2	West Polynesian	GG	1	0.85
+245	62	Female	No	0.42	22.4	Gout	2	East Polynesian	AG	1	0.967
+246	62	Male	No	0.46	23	Gout	2	East Polynesian	GG	1	0.989
+247	45	Female	No	0.26	25.9	Gout	2	East Polynesian	GG	1	0.988
+248	54	Female	No	0.29	21.9	Control	1	European	AG	0.75	0.6
+249	61	Male	No	0.55	27.7	Control	1	East Polynesian	GG	0.25	0.086
+250	57	Female	No	0.37	39.8	Gout	2	European	AA	1	0.85
+251	61	Male	No	0.48	31	Control	1	European	AG	1	0.959
+252	59	Female	No	0.31	26.9	Gout	2	East Polynesian	GG	1	0.967
+253	60	Female	No	0.34	30	Control	1	East Polynesian	GG	1	0.85
+254	63	Female	No	0.32	22.3	Control	1	East Polynesian	AG	1	0.992
+255	58	Female	No	0.29	22.2	Control	1	East Polynesian	AA	0.25	0.159
+256	64	Male	Yes	0.52	19.2	Gout	2	West Polynesian	AG	1	0.983
+257	60	Male	No	0.57	31.7	Control	1	West Polynesian	AG	0.5	0.35
+258	55	Female	Yes	0.36	22.4	Gout	2	West Polynesian	GG	0.25	0.1
+259	64	Female	No	0.43	27.4	Gout	2	West Polynesian	GG	1	0.993
+260	59	Female	NA	0.34	21.9	Gout	2	East Polynesian	AG	0.125	0.026
+261	58	Female	Yes	0.33	17.7	Gout	2	East Polynesian	AG	0.5	0.424
+262	46	Male	No	0.47	35.7	Gout	2	European	GG	1	0.992
+263	59	Female	No	0.4	30.6	Control	1	West Polynesian	GG	1	0.85
+264	48	Male	No	0.49	35.4	Control	1	East Polynesian	AG	1	0.85
+265	57	Female	No	0.3	25.3	NA	NA	East Polynesian	GG	1	0.981
+266	55	Female	No	0.38	23.2	Control	1	West Polynesian	AA	1	0.987
+267	46	Male	No	0.45	29.4	Control	1	European	GG	1	0.967
+268	47	Female	No	0.21	27.7	Control	1	East Polynesian	AA	1	0.988
+269	54	Male	Yes	0.45	29.3	Gout	2	West Polynesian	GG	1	0.85
+270	58	Female	No	0.4	27.9	Gout	2	West Polynesian	AA	1	0.85
+271	64	Female	No	0.24	28.2	Gout	2	European	AA	1	0.85
+272	64	Female	No	0.4	27.5	Control	1	East Polynesian	GG	1	0.968
+273	52	Female	No	0.3	26.1	Control	1	West Polynesian	GG	1	0.85
+274	45	Male	No	0.44	28.7	NA	NA	West Polynesian	AG	1	0.987
+275	45	Female	No	0.37	40	Control	1	East Polynesian	GG	1	0.968
+276	55	Female	No	0.41	31	Gout	2	West Polynesian	GG	0.375	0.225
+277	59	Male	Yes	0.54	29.6	Control	1	European	AA	1	0.988
+278	57	Female	No	0.33	26.3	Control	1	East Polynesian	GG	1	0.941
+279	56	Female	No	0.27	22.1	Gout	2	East Polynesian	GG	0.5	0.357
+280	59	Male	No	0.45	25.1	Gout	2	West Polynesian	AG	1	0.928
+281	52	Female	No	0.21	18.7	Gout	2	West Polynesian	GG	0.5	0.35
+282	58	Female	Yes	0.4	19.2	Control	1	East Polynesian	GG	1	0.85
+283	52	Male	Yes	0.45	27.6	Gout	2	East Polynesian	GG	1	0.85
+284	64	Male	Yes	0.45	41.8	Gout	2	East Polynesian	GG	1	0.85
+285	56	Female	No	0.27	22.7	Gout	2	East Polynesian	AG	0.75	0.6
+286	62	Female	No	0.37	24.8	Gout	2	West Polynesian	AG	1	0.929
+287	48	Female	No	0.11	19.4	Gout	2	European	GG	1	0.99
+288	47	Female	No	0.29	21.1	Control	1	West Polynesian	AG	0.325	0.169
+289	57	Female	No	0.4	30.9	Control	1	European	AA	0.5	0.475
+290	59	Female	No	0.33	30.2	Control	1	West Polynesian	GG	1	0.85
+291	58	Female	No	0.39	46.3	Control	1	West Polynesian	AG	0.75	0.575
+292	50	Female	NA	0.32	31.2	Gout	2	East Polynesian	AG	0.75	0.654
+293	61	Female	Yes	0.28	29.5	Gout	2	West Polynesian	GG	1	0.85
+294	59	Female	No	0.34	24.3	Control	1	West Polynesian	AG	1	0.85
+295	55	Female	No	0.32	22.8	Gout	2	East Polynesian	GG	0.75	0.664
+296	49	Female	No	0.39	34	Control	1	European	AG	1	0.85
+297	50	Female	No	0.33	31	Gout	2	West Polynesian	AG	1	0.85
+298	59	Female	No	0.37	38.6	Control	1	East Polynesian	GG	1	0.971
+299	46	Female	No	0.32	24	Control	1	West Polynesian	GG	0.75	0.669
+300	57	Male	No	0.44	24.9	Control	1	Mixed Polynesian	AG	1	0.982
+301	57	Female	Yes	0.37	35.9	Gout	2	East Polynesian	AG	1	0.99
+302	60	Female	No	0.4	21.8	Control	1	West Polynesian	AG	0.75	0.674
+303	50	Male	No	0.51	28.5	Control	1	East Polynesian	GG	1	0.987
+304	63	Female	No	0.4	23.8	Control	1	Mixed Polynesian	AG	1	0.85
+305	57	Female	No	0.27	26.8	Control	1	European	AG	1	0.994
+306	50	Female	No	0.36	35.2	Gout	2	East Polynesian	GG	0.5	0.492
+307	59	Female	No	0.39	26.1	Control	1	Mixed Polynesian	AG	1	0.89
+308	55	Female	No	0.43	31.1	Control	1	West Polynesian	AG	1	0.99
+309	53	Female	NA	0.4	36.9	Gout	2	West Polynesian	AG	0.5	0.424
+310	57	Female	No	0.39	27	Control	1	European	AG	1	0.85
+311	53	Female	No	0.4	31.6	Gout	2	European	AA	0.875	0.82
+312	47	Female	NA	0.36	38.8	Control	1	European	AG	1	0.85
+313	62	Male	No	0.45	25.5	Control	1	European	AG	1	0.85
+314	63	Female	No	0.37	26.2	NA	NA	East Polynesian	GG	0.75	0.626
+315	56	Female	No	0.37	28.1	Control	1	European	AA	1	0.85
+316	61	Male	No	0.49	32.7	Gout	2	European	AA	1	0.971
+317	47	Female	No	0.29	27.9	Control	1	European	GG	0.375	0.225
+318	49	Male	No	0.52	47	Gout	2	European	AA	0.5	0.427
+319	59	Female	No	0.33	36.3	Gout	2	European	AA	1	0.99
+320	54	Male	No	0.57	26.9	Gout	2	European	AG	0.5	0.428
+321	54	Female	No	0.38	35.7	NA	NA	East Polynesian	GG	1	0.85
+322	45	Female	No	0.38	39.6	Control	1	European	AA	1	0.85
+323	60	Female	No	0.3	20.7	Control	1	European	AA	0.5	0.432
+324	55	Male	No	0.45	37.6	Control	1	European	AG	1	0.993
+325	56	Male	No	0.44	25.4	Control	1	East Polynesian	GG	1	0.85
+326	53	Male	No	0.54	26.6	Control	1	West Polynesian	AA	0.75	0.58
+327	56	Female	No	0.25	31.9	NA	NA	West Polynesian	AA	0.5	0.255
+328	64	Male	No	0.45	28.2	Gout	2	West Polynesian	AA	0.875	0.746
+329	63	Male	No	0.51	35.4	Gout	2	West Polynesian	GG	0.5	0.35
+330	50	Female	No	0.31	38.7	Gout	2	West Polynesian	AG	0.5	0.261
+331	54	Female	No	0.33	28.3	Control	1	East Polynesian	GG	1	0.991
+332	54	Female	NA	0.32	36.4	Control	1	West Polynesian	AG	1	0.993
+333	57	Female	Yes	0.38	31.6	Gout	2	West Polynesian	GG	1	0.85
+334	60	Male	No	0.47	26.6	Gout	2	East Polynesian	GG	0.5	0.35
+335	61	Male	No	0.54	33	Gout	2	East Polynesian	AG	0.375	0.232
+336	62	Male	NA	0.45	27.9	Gout	2	West Polynesian	AG	1	0.959
+337	46	Female	No	0.19	25.9	Control	1	East Polynesian	GG	1	0.99
+338	57	Female	No	0.38	25.5	Control	1	West Polynesian	AG	1	0.85
+339	61	Female	No	0.41	26.9	Gout	2	European	AA	1	0.954
+340	53	Female	No	0.29	21.1	Gout	2	West Polynesian	AA	1	0.993
+341	57	Male	No	0.58	28.8	Gout	2	East Polynesian	AG	1	0.968
+342	51	Female	No	0.33	23.1	Control	1	East Polynesian	AG	1	0.85
+343	57	Female	No	0.42	38.3	Gout	2	East Polynesian	GG	1	0.93
+344	48	Male	Yes	0.44	30.9	Gout	2	East Polynesian	AG	1	0.85
+345	62	Male	No	0.43	33.7	Gout	2	East Polynesian	AG	1	0.85
+346	62	Female	Yes	0.3	28.9	Control	1	West Polynesian	AA	1	0.992
+347	55	Female	No	0.26	23.4	Control	1	West Polynesian	AG	1	0.942
+348	49	Male	No	0.57	26.3	Control	1	East Polynesian	AG	0.125	NA
+349	61	Male	NA	0.43	31.8	Control	1	West Polynesian	AG	1	0.931
+350	50	Female	No	0.29	30.1	Control	1	East Polynesian	AA	1	0.992
+351	60	Female	No	0.29	21.7	Control	1	East Polynesian	GG	1	0.983
+352	61	Male	No	0.58	28.9	Control	1	East Polynesian	GG	0.75	0.6
+353	55	Female	No	0.37	31	Control	1	East Polynesian	GG	1	0.983
+354	53	Female	No	0.42	27.9	Gout	2	East Polynesian	GG	0.125	0.047
+355	51	Male	No	0.5	28.7	Control	1	European	GG	1	0.972
+356	47	Male	No	0.54	28	Control	1	West Polynesian	AG	0.75	0.584
+357	64	Male	No	0.55	28.8	Control	1	West Polynesian	AG	1	0.85
+358	51	Female	No	0.36	23.6	Control	1	East Polynesian	AG	0.575	0.498
+359	47	Female	No	0.41	30	Gout	2	East Polynesian	GG	1	0.983
+360	53	Female	NA	0.3	28.4	Gout	2	West Polynesian	GG	1	0.85
+361	56	Female	NA	0.17	19.8	Control	1	West Polynesian	GG	1	0.85
+362	47	Female	No	0.25	23.4	Control	1	European	GG	1	0.989
+363	64	Male	No	0.48	25.1	Gout	2	East Polynesian	AG	1	0.984
+364	59	Female	Yes	0.21	35.9	Control	1	East Polynesian	GG	1	0.85
+365	63	Female	No	0.35	25.6	Control	1	East Polynesian	GG	0.875	0.747
+366	64	Female	No	0.31	33.1	Gout	2	East Polynesian	GG	1	0.988
+367	57	Female	No	0.36	27.9	Gout	2	Mixed Polynesian	AG	0.5	0.35
+368	47	Female	No	0.42	29.8	Gout	2	East Polynesian	GG	1	0.993
+369	60	Female	No	0.41	33.5	Gout	2	European	AG	0.25	0.1
+370	47	Female	Yes	0.31	26.5	Gout	2	East Polynesian	GG	1	0.968
+371	45	Female	No	0.41	41.7	Gout	2	East Polynesian	GG	1	0.85
+372	60	Female	No	0.38	38.6	Gout	2	East Polynesian	GG	1	0.972
+373	57	Male	Yes	0.67	30.1	Gout	2	East Polynesian	AG	0.75	0.627
+374	56	Female	No	0.33	27.4	Gout	2	East Polynesian	GG	0.25	0.047
+375	60	Female	No	0.36	28.7	Gout	2	East Polynesian	GG	0.75	0.725
+376	52	Female	Yes	0.4	24.6	Gout	2	East Polynesian	GG	1	0.914
+377	58	Female	No	0.36	23.9	Gout	2	East Polynesian	AG	1	0.85
+378	52	Female	No	0.21	20	Control	1	East Polynesian	GG	1	0.85
+379	64	Female	No	0.39	26.5	Control	1	East Polynesian	GG	1	0.968
+380	53	Male	No	0.45	27.4	Control	1	East Polynesian	GG	1	0.85
+381	55	Female	No	0.38	21	Gout	2	East Polynesian	AG	1	0.932
+382	56	Female	No	0.42	33.6	Control	1	East Polynesian	AG	1	0.932
+383	54	Male	No	0.45	30.2	Control	1	European	AA	1	1
+384	61	Male	Yes	0.49	31.1	NA	NA	East Polynesian	GG	0.125	NA
+385	50	Female	No	0.34	29.6	Control	1	East Polynesian	AG	1	0.968
+386	60	Male	No	0.45	38.3	Gout	2	East Polynesian	AA	0.25	0.051
+387	50	Male	Yes	0.45	54	Gout	2	East Polynesian	GG	0.33	0.169
+388	54	Female	No	0.4	27.2	Control	1	East Polynesian	GG	1	0.85
+389	55	Male	No	0.45	28.9	Gout	2	East Polynesian	AG	1	0.932
+390	52	Male	Yes	0.65	29.9	Control	1	Mixed Polynesian	AG	1	0.85
+391	61	Female	NA	0.36	32.8	Control	1	West Polynesian	GG	0.25	0.052
+392	48	Female	NA	0.4	40.1	Control	1	East Polynesian	GG	1	0.978
+393	56	Male	No	0.52	30.2	Control	1	East Polynesian	GG	1	0.993
+394	55	Male	No	0.46	25.7	Gout	2	European	AA	1	0.85
+395	49	Female	NA	0.32	27.9	Control	1	European	AG	1	0.989
+396	55	Male	No	0.46	23.9	NA	NA	European	AA	0.625	0.499
+397	60	Female	Yes	0.34	24.9	Gout	2	West Polynesian	GG	0.333	0.176
+398	62	Male	No	0.45	41.4	Gout	2	European	AG	1	0.978
+399	64	Female	No	0.33	25.7	Control	1	European	AG	1	0.982
+400	54	Male	NA	0.44	40.7	Control	1	European	AG	0.75	0.627
+401	61	Female	No	0.39	31.3	Control	1	West Polynesian	AG	0.5	0.475
+402	46	Female	No	0.26	21.2	Gout	2	West Polynesian	GG	1	0.988
+403	61	Female	Yes	0.39	30.9	Control	1	West Polynesian	GG	0.875	0.821
+404	56	Female	NA	0.4	30.6	Control	1	West Polynesian	GG	1	0.916
+405	47	Female	Yes	0.43	24.6	Gout	2	West Polynesian	GG	1	0.85
+406	45	Female	No	0.4	28.1	Gout	2	West Polynesian	GG	0.625	0.514
+407	62	Female	No	0.26	28.8	Gout	2	West Polynesian	AG	1	0.991
+408	54	Female	No	0.31	25.1	Control	1	West Polynesian	AA	0.75	0.676
+409	58	Female	No	0.37	23.5	Control	1	West Polynesian	AA	1	0.96
+410	62	Female	NA	0.4	35.3	Control	1	West Polynesian	AG	1	0.989
+411	56	Male	Yes	0.46	27.9	Gout	2	East Polynesian	GG	1	0.85
+412	64	Female	No	0.33	27.2	NA	NA	West Polynesian	GG	0.875	0.821
+413	60	Female	NA	0.3	31	Gout	2	West Polynesian	AG	1	0.942
+414	61	Female	NA	0.21	33	Control	1	West Polynesian	GG	1	0.982
+415	63	Male	No	0.51	31.1	Control	1	West Polynesian	GG	0.75	0.6
+416	55	Female	No	0.3	28.5	Control	1	East Polynesian	GG	0.875	0.824
+417	53	Male	NA	0.48	26.7	Control	1	East Polynesian	GG	1	1
+418	49	Female	No	0.37	36.1	Gout	2	East Polynesian	GG	1	0.92
+419	49	Female	No	0.33	29.6	Control	1	West Polynesian	AG	1	1
+420	61	Male	NA	0.46	30.8	NA	NA	East Polynesian	GG	1	0.85
+421	59	Female	No	0.42	30.9	Gout	2	East Polynesian	AG	0.375	0.178
+422	45	Female	No	0.24	20.3	Control	1	East Polynesian	GG	0.875	0.755
+423	47	Female	No	0.28	26.7	Control	1	East Polynesian	GG	1	0.85
+424	63	Female	No	0.36	39	Control	1	West Polynesian	AG	0.75	0.584
+425	58	Female	No	0.33	27.5	NA	NA	West Polynesian	AG	1	0.943
+426	62	Female	No	0.34	36.7	Control	1	West Polynesian	AG	0.875	0.756
+427	57	Female	No	0.37	22.2	Control	1	West Polynesian	AA	1	0.961
+428	58	Female	Yes	0.27	24.7	Control	1	West Polynesian	GG	0.625	0.519
+429	64	Male	No	0.53	27.9	Control	1	West Polynesian	GG	1	0.92
+430	62	Male	No	0.43	27.7	Gout	2	East Polynesian	GG	1	0.974
+431	52	Female	No	0.34	27.2	Gout	2	West Polynesian	GG	0.25	0.116
+432	49	Female	No	0.42	26.8	Gout	2	West Polynesian	AA	1	0.975
+433	50	Female	No	0.29	22.8	Control	1	East Polynesian	GG	1	0.994
+434	60	Female	No	0.29	37	Gout	2	West Polynesian	AA	1	0.891
+435	59	Female	No	0.39	35	Gout	2	European	AG	0.75	0.725
+436	58	Male	NA	0.44	25.9	Control	1	East Polynesian	GG	1	0.85
+437	61	Female	No	0.33	26.3	Gout	2	East Polynesian	GG	1	0.978
+438	58	Male	NA	0.43	23.6	Gout	2	East Polynesian	GG	0.25	0.1
+439	61	Female	No	0.42	25.6	Gout	2	East Polynesian	GG	1	0.992
+440	61	Female	No	0.33	32	Control	1	East Polynesian	GG	1	0.972
+441	64	Male	No	0.52	24.4	Control	1	East Polynesian	GG	1	0.85
+442	50	Female	Yes	0.36	30.3	Gout	2	East Polynesian	AG	1	1
+443	58	Male	No	0.52	26.7	Control	1	West Polynesian	AG	1	0.85
+444	63	Female	NA	0.31	24.9	Gout	2	Mixed Polynesian	GG	1	0.921
+445	60	Female	NA	0.25	21.5	Gout	2	European	AG	1	0.982
+446	62	Female	No	0.42	25.5	Control	1	European	AA	1	0.954
+447	61	Female	No	0.32	24.7	Gout	2	East Polynesian	AG	0.75	0.584
+448	55	Female	No	0.39	27.2	Control	1	East Polynesian	GG	0.25	0.088
+449	60	Female	No	0.33	36.8	Control	1	West Polynesian	AG	1	0.993
+450	60	Female	No	0.26	25.1	Control	1	East Polynesian	GG	0.75	0.725
+451	45	Female	No	0.36	42.9	Gout	2	East Polynesian	GG	0.25	0.1
+452	57	Male	No	0.51	37.2	Gout	2	East Polynesian	AG	1	0.895
+453	48	Female	No	0.41	26.6	Control	1	East Polynesian	AG	1	0.982
+454	64	Female	No	0.36	38.5	Control	1	European	AA	0.5	0.35
+455	64	Male	No	0.59	24.6	Control	1	West Polynesian	GG	1	1
+456	51	Male	No	0.43	28.2	Control	1	West Polynesian	GG	0.75	0.591
+457	54	Female	Yes	0.41	30.3	Control	1	European	AG	0.625	0.499
+458	50	Female	No	0.42	31.8	Control	1	West Polynesian	AG	1	0.85
+459	51	Female	No	0.38	32.6	Gout	2	West Polynesian	AG	0.75	0.6
+460	55	Male	No	0.51	32.9	Control	1	West Polynesian	GG	1	0.85
+461	55	Female	No	0.31	25.2	Control	1	East Polynesian	GG	0.5	0.266
+462	46	Male	No	0.57	33.6	Control	1	East Polynesian	GG	1	0.992
+463	57	Male	NA	0.45	27.4	Gout	2	East Polynesian	GG	1	0.978
+464	53	Male	Yes	0.54	24.1	Control	1	East Polynesian	AG	1	0.85
+465	61	Male	No	0.47	36.5	Gout	2	West Polynesian	GG	0.875	0.831
+466	61	Female	Yes	0.32	24.9	Control	1	West Polynesian	GG	1	1
+467	59	Female	No	0.42	31.3	Control	1	East Polynesian	GG	1	0.85
+468	46	Female	No	0.39	30.5	Control	1	East Polynesian	AG	1	0.85
+469	59	Male	No	0.44	36.6	Control	1	West Polynesian	AG	1	0.85
+470	57	Male	No	0.47	38.4	Control	1	Mixed Polynesian	GG	1	0.968
+471	52	Female	No	0.29	21.9	Gout	2	West Polynesian	GG	1	1
+472	61	Female	No	0.39	23.4	Control	1	West Polynesian	GG	0.75	0.6
+473	52	Female	No	0.41	33.5	Control	1	West Polynesian	GG	1	0.85
+474	50	Female	No	0.39	25.1	Control	1	West Polynesian	GG	1	0.994
+475	45	Male	No	0.53	51.1	Gout	2	European	AG	1	1
+476	53	Female	No	0.29	28.7	Control	1	East Polynesian	AA	0.5	0.28
+477	49	Male	No	0.45	32	Gout	2	East Polynesian	GG	0.5	0.436
+478	54	Female	No	0.29	24.7	Control	1	East Polynesian	AG	1	0.85
+479	45	Male	No	0.65	29.5	Gout	2	East Polynesian	AG	1	0.85
+480	62	Male	No	0.57	27.4	Gout	2	European	GG	1	0.984
+481	59	Female	No	0.32	32.6	Control	1	East Polynesian	AA	1	0.968
+482	52	Female	No	0.27	22.2	NA	NA	East Polynesian	GG	1	0.994
+483	59	Female	No	0.33	29.3	Control	1	East Polynesian	AG	0.625	0.499
+484	54	Female	NA	0.37	25.6	Control	1	East Polynesian	AG	1	0.85
+485	56	Female	No	0.3	28.2	Control	1	East Polynesian	AG	1	0.994
+486	63	Male	No	0.61	27.7	Control	1	European	AA	1	0.85
+487	51	Male	No	0.48	31.9	Gout	2	East Polynesian	GG	1	0.992
+488	61	Female	No	0.32	25.8	Gout	2	East Polynesian	GG	0.75	0.725
+489	63	Female	No	0.42	24.4	Control	1	East Polynesian	GG	1	0.922
+490	63	Male	No	0.51	27	Control	1	East Polynesian	AA	0.875	0.833
+491	49	Female	No	0.23	21.6	NA	NA	West Polynesian	AG	0.875	0.765
+492	61	Female	No	0.4	28.2	Control	1	West Polynesian	AG	1	0.993
+493	64	Female	No	0.4	20.5	Gout	2	East Polynesian	GG	0.5	0.35
+494	48	Female	Yes	0.37	25.9	Control	1	East Polynesian	GG	1	0.922
+495	49	Male	No	0.53	24.1	Gout	2	East Polynesian	GG	1	0.943
+496	58	Male	No	0.45	28.9	Gout	2	East Polynesian	GG	1	0.85
+497	47	Female	No	0.39	25.8	Gout	2	West Polynesian	GG	1	0.895
+498	53	Female	No	0.21	18.3	Gout	2	Mixed Polynesian	GG	1	0.923
+499	59	Female	No	0.27	33	Control	1	East Polynesian	GG	1	0.85
+500	58	Female	No	0.38	30.6	Gout	2	West Polynesian	AG	1	1
+501	52	Female	No	0.39	31	Gout	2	East Polynesian	GG	1	0.896
+502	64	Male	NA	0.47	23.8	Control	1	East Polynesian	GG	1	0.978
+503	58	Female	No	0.36	23.9	Control	1	East Polynesian	AG	0.125	NA
+504	48	Female	No	0.36	22.4	Gout	2	East Polynesian	AG	1	0.978
+505	56	Male	No	0.45	29	Gout	2	East Polynesian	AG	0.75	0.6
+506	59	Male	No	0.51	25.2	Control	1	West Polynesian	AG	1	0.982
+507	48	Female	No	0.3	35.5	Gout	2	West Polynesian	AG	0.625	0.499
+508	59	Female	NA	0.42	26.7	Control	1	East Polynesian	GG	0.75	0.6
+509	48	Male	No	0.46	38	Control	1	East Polynesian	AG	0.875	0.765
+510	56	Female	No	0.32	30.2	Control	1	West Polynesian	GG	1	0.978
+511	59	Male	No	0.46	33.2	Control	1	East Polynesian	AG	1	0.961
+512	47	Female	Yes	0.3	23	Control	1	West Polynesian	AA	1	1
+513	56	Female	No	0.42	25.2	Gout	2	East Polynesian	GG	1	0.85
+514	49	Male	No	0.45	28	Gout	2	East Polynesian	AA	1	0.991
+515	53	Female	No	0.39	28.1	Control	1	East Polynesian	AG	1	0.933
+516	55	Female	No	0.37	37.5	Control	1	East Polynesian	AG	1	1
+517	64	Male	No	0.44	31.8	Gout	2	East Polynesian	AG	0.875	0.838
+518	54	Female	No	0.39	34.2	Control	1	West Polynesian	AG	1	0.85
+519	51	Female	No	0.41	29.8	Gout	2	East Polynesian	GG	1	0.995
+520	63	Female	No	0.36	31.3	Gout	2	West Polynesian	AG	1	0.995
+521	62	Female	No	0.36	30.5	Control	1	East Polynesian	AA	0.5	0.361
+522	52	Male	No	0.46	29.4	Gout	2	West Polynesian	AG	0.625	0.5
+523	55	Female	No	0.32	22.6	Gout	2	West Polynesian	AG	1	0.969
+524	53	Male	No	0.46	29.6	Control	1	West Polynesian	GG	1	0.985
+525	61	Female	No	0.31	43.3	Control	1	West Polynesian	GG	1	1
+526	54	Female	No	0.32	25.1	Gout	2	West Polynesian	GG	1	0.933
+527	49	Male	No	0.45	32.5	Gout	2	West Polynesian	AA	1	0.979
+528	51	Male	NA	0.45	28.4	Control	1	West Polynesian	GG	1	0.85
+529	60	Female	No	0.33	23.4	Gout	2	East Polynesian	GG	1	0.969
+530	60	Female	No	0.42	27.6	Control	1	East Polynesian	GG	0.5	0.257
+531	63	Male	No	0.48	28.9	Control	1	West Polynesian	AA	1	0.933
+532	55	Female	No	0.34	33.5	Control	1	West Polynesian	AG	1	0.85
+533	63	Female	No	0.4	40	Control	1	West Polynesian	GG	0.25	0.124
+534	62	Male	No	0.55	29.7	Gout	2	European	AA	0.875	0.838
+535	58	Male	No	0.57	55.2	Gout	2	European	GG	1	0.85
+536	62	Female	No	0.39	23.3	Control	1	European	AG	0.625	0.5
+537	56	Male	No	0.46	24.9	Control	1	European	AG	0.25	0.136
+538	59	Male	No	0.48	33.7	Control	1	Mixed Polynesian	GG	0.625	0.52
+539	61	Male	No	0.59	30.2	NA	NA	East Polynesian	GG	0.625	0.5
+540	62	Female	No	0.37	38.4	Gout	2	East Polynesian	GG	0.5	0.438
+541	63	Male	No	0.52	27.9	Control	1	Mixed Polynesian	AA	1	0.85
+542	52	Female	No	0.43	28	Control	1	East Polynesian	GG	1	0.85
+543	57	Male	Yes	0.57	27.1	Control	1	East Polynesian	AG	1	0.85
+544	60	Female	No	0.36	24.4	Gout	2	East Polynesian	GG	0.5	0.369
+545	61	Male	Yes	0.53	33.1	Control	1	East Polynesian	AG	1	0.992
+546	53	Female	No	0.23	22.8	Control	1	European	AG	1	0.898
+547	50	Female	No	0.38	27.5	Control	1	East Polynesian	GG	1	0.985
+548	51	Male	No	0.54	27.1	Gout	2	East Polynesian	AG	0.5	0.35
+549	61	Female	No	0.38	28.1	Gout	2	East Polynesian	GG	0.625	0.5
+550	59	Female	Yes	0.42	21.9	Gout	2	East Polynesian	AG	0.875	0.765
+551	47	Female	No	0.3	29.5	Gout	2	East Polynesian	AG	1	1
+552	56	Female	NA	0.36	27.4	Gout	2	East Polynesian	GG	1	1
+553	61	Female	Yes	0.25	20.7	Control	1	East Polynesian	GG	1	0.85
+554	64	Female	No	0.41	32.4	Control	1	East Polynesian	AG	0.875	0.839
+555	60	Female	Yes	0.37	25.3	Control	1	East Polynesian	AG	0.625	0.524
+556	48	Female	NA	0.39	34.9	Control	1	East Polynesian	AG	0.5	0.385
+557	54	Male	No	0.46	38.9	Gout	2	West Polynesian	GG	1	0.85
+558	45	Female	No	0.28	24.6	Control	1	East Polynesian	GG	1	0.995
+559	59	Female	NA	0.26	32.2	Control	1	East Polynesian	AG	0.875	0.841
+560	60	Female	No	0.41	22.5	Gout	2	West Polynesian	AA	1	0.85
+561	47	Female	No	0.2	27.1	Control	1	West Polynesian	AG	1	0.994
+562	52	Female	No	0.36	34.2	Gout	2	European	AA	0.75	0.725
+563	62	Female	Yes	0.38	29.7	Gout	2	West Polynesian	AA	0.375	0.186
+564	48	Female	Yes	0.31	28.2	Control	1	East Polynesian	GG	1	0.975
+565	57	Female	Yes	0.21	27.1	Control	1	West Polynesian	AA	0.5	0.35
+566	60	Female	No	0.27	24.5	Gout	2	Mixed Polynesian	GG	1	0.992
+567	55	Male	No	0.48	40.7	Control	1	East Polynesian	AG	1	0.983
+568	64	Male	No	0.54	30.5	Gout	2	West Polynesian	GG	1	0.961
+569	50	Female	No	0.28	30.4	Control	1	European	AG	1	0.85
+570	56	Male	No	0.51	35.9	Gout	2	East Polynesian	GG	1	0.976
+571	63	Male	NA	0.59	25.1	Control	1	East Polynesian	AG	1	0.899
+572	48	Female	Yes	0.4	24.6	Control	1	East Polynesian	AG	1	0.992
+573	63	Female	No	0.41	28.9	Control	1	East Polynesian	GG	0.25	0.1
+574	48	Female	No	0.36	30.5	Control	1	European	AA	1	0.983
+575	63	Male	No	0.51	42.8	Control	1	West Polynesian	AG	1	0.853
+576	62	Female	No	0.35	26.3	Gout	2	West Polynesian	AA	0.375	0.189
+577	49	Female	No	0.25	25.1	Gout	2	West Polynesian	AG	1	0.993
+578	64	Male	No	0.75	24.4	Gout	2	East Polynesian	AG	1	0.992
+579	58	Female	NA	0.39	29.3	Gout	2	East Polynesian	GG	1	1
+580	62	Female	No	0.41	24.1	Control	1	Mixed Polynesian	AA	1	0.85
+581	54	Female	NA	0.3	21.2	Gout	2	East Polynesian	AG	1	0.979
+582	63	Female	NA	0.43	22.1	Control	1	East Polynesian	GG	0.125	0.026
+583	59	Female	NA	0.28	28	Gout	2	European	GG	1	0.995
+584	48	Male	No	0.45	33	NA	NA	West Polynesian	GG	1	0.979
+585	51	Female	NA	0.28	25	Control	1	West Polynesian	AA	0.625	0.527
+586	57	Male	No	0.46	25.4	Control	1	West Polynesian	GG	1	0.944
+587	64	Female	No	0.31	41.2	Gout	2	East Polynesian	GG	1	0.985
+588	54	Male	No	0.54	37.1	Gout	2	East Polynesian	AG	0.5	0.35
+589	57	Male	No	0.48	36.9	Control	1	East Polynesian	GG	1	1
+590	53	Male	No	0.51	24.6	Control	1	East Polynesian	GG	0.25	0.1
+591	49	Female	No	0.23	23.7	Control	1	East Polynesian	GG	1	0.85
+592	60	Female	No	0.43	24	Gout	2	East Polynesian	AG	1	0.982
+593	63	Female	No	0.31	27.2	Gout	2	West Polynesian	AA	1	1
+594	64	Female	No	0.42	29.1	Gout	2	West Polynesian	GG	0.125	0.028
+595	57	Male	No	0.55	22.3	Control	1	European	AA	1	0.899
+596	60	Female	NA	0.3	28.5	Control	1	European	AG	0.25	0.1
+597	57	Female	Yes	0.29	24	Gout	2	East Polynesian	GG	0.5	0.441
+598	57	Female	Yes	0.39	30.8	Gout	2	West Polynesian	GG	1	0.994
+599	63	Male	No	0.5	39.3	Control	1	East Polynesian	GG	1	0.983
+600	60	Female	No	0.29	23.5	Control	1	European	AA	1	0.85
+601	64	Female	No	0.4	34.3	Control	1	European	AG	1	0.85
+602	58	Female	NA	0.39	37.6	Control	1	West Polynesian	AG	0.875	0.845
+603	51	Female	No	0.29	27.4	Gout	2	East Polynesian	AG	1	0.85
+604	53	Male	Yes	0.46	26.9	Gout	2	West Polynesian	AG	1	0.85
+605	63	Female	No	0.37	25.7	Control	1	West Polynesian	GG	1	0.85
+606	56	Female	No	0.38	27.5	Control	1	West Polynesian	AG	1	0.923
+607	62	Female	No	0.34	29.5	Control	1	West Polynesian	AG	0.125	0.032
+608	57	Female	No	0.39	31.1	Control	1	East Polynesian	GG	1	0.994
+609	62	Female	No	0.38	34.8	Control	1	West Polynesian	AG	1	0.859
+610	48	Female	No	0.28	27.5	Control	1	East Polynesian	AG	1	0.984
+611	46	Male	No	0.49	25.7	Gout	2	East Polynesian	AG	1	1
+612	52	Male	No	0.45	25.9	Gout	2	West Polynesian	GG	0.75	0.6
+613	54	Female	No	0.17	31	Gout	2	East Polynesian	GG	1	0.85
+614	47	Female	No	0.26	28.5	Control	1	West Polynesian	AG	0.5	0.441
+615	63	Male	No	0.47	26	Control	1	East Polynesian	AG	0.25	0.156
+616	57	Female	Yes	0.4	31	NA	NA	Mixed Polynesian	AG	1	0.86
+617	56	Female	No	0.39	40.9	Gout	2	West Polynesian	GG	1	0.9
+618	51	Male	No	0.54	27.3	Gout	2	East Polynesian	GG	0.75	0.6
+619	57	Female	No	0.25	26.8	Control	1	East Polynesian	GG	0.75	0.683
+620	48	Female	No	0.29	37.4	Control	1	Mixed Polynesian	GG	1	0.945
+621	46	Female	No	0.37	32.6	NA	NA	East Polynesian	AA	1	0.992
+622	50	Male	No	0.69	25.5	Control	1	West Polynesian	AG	1	1
+623	64	Female	No	0.41	36.7	Gout	2	East Polynesian	GG	0.25	0.137
+624	64	Female	NA	0.38	31.1	Control	1	East Polynesian	GG	1	0.85
+625	52	Female	No	0.35	31.4	Control	1	West Polynesian	GG	1	1
+626	64	Male	NA	0.48	25.8	Control	1	East Polynesian	AG	1	0.85
+627	51	Female	NA	0.32	27.7	Gout	2	European	GG	1	0.85
+628	64	Male	Yes	0.44	32.5	Control	1	East Polynesian	AG	1	0.933
+629	55	Male	Yes	0.73	30.2	Control	1	West Polynesian	GG	0.5	0.389
+630	63	Female	No	0.36	27.2	Control	1	East Polynesian	AG	1	1
+631	53	Female	Yes	0.32	27.5	Gout	2	West Polynesian	AG	1	0.85
+632	56	Male	No	0.61	36.8	Gout	2	East Polynesian	GG	1	0.85
+633	45	Female	No	0.31	33	Control	1	East Polynesian	GG	1	0.982
+634	62	Male	No	0.48	38.2	Gout	2	East Polynesian	GG	1	0.85
+635	62	Female	No	0.35	30.9	Gout	2	Mixed Polynesian	GG	0.25	0.1
+636	47	Female	No	0.4	29.3	Gout	2	West Polynesian	GG	1	0.862
+637	62	Female	No	0.37	30.9	Gout	2	East Polynesian	AG	1	0.924
+638	64	Female	No	0.32	23.5	Control	1	East Polynesian	GG	1	0.988
+639	61	Male	No	0.52	26.9	Gout	2	West Polynesian	AG	0.75	0.683
+640	58	Male	No	0.44	24.5	Gout	2	West Polynesian	AG	1	0.976
+641	62	Female	NA	0.28	22.5	Gout	2	East Polynesian	GG	0.625	0.532
+642	63	Male	No	0.47	36.8	Gout	2	East Polynesian	AG	1	0.85
+643	45	Female	No	0.39	20.4	Gout	2	East Polynesian	AG	0.125	NA
+644	46	Female	NA	0.38	19.4	Gout	2	East Polynesian	GG	1	1
+645	58	Male	Yes	0.54	37	Control	1	European	AG	1	0.989
+646	59	Female	NA	0.42	25.1	Gout	2	East Polynesian	GG	0.75	0.725
+647	48	Male	No	0.45	27.8	Gout	2	East Polynesian	AG	1	0.991
+648	56	Female	No	0.24	25.1	Gout	2	East Polynesian	GG	1	0.982
+649	55	Male	No	0.47	23	Control	1	East Polynesian	GG	1	0.85
+650	60	Male	No	0.49	39.3	NA	NA	East Polynesian	AG	1	0.85
+651	59	Female	Yes	0.36	32.6	Gout	2	European	AA	1	0.85
+652	63	Male	Yes	0.56	24.9	Control	1	East Polynesian	GG	0.875	0.847
+653	60	Female	No	0.29	36.8	Control	1	European	AA	1	0.863
+654	60	Female	NA	0.42	25.6	Gout	2	European	GG	0.875	0.848
+655	60	Female	Yes	0.43	24.2	Gout	2	East Polynesian	AG	1	0.85
+656	51	Female	No	0.31	39.4	Control	1	East Polynesian	AA	1	0.924
+657	52	Female	No	0.24	25.5	Control	1	East Polynesian	GG	0.75	0.6
+658	52	Female	Yes	0.34	32.4	Gout	2	East Polynesian	AG	0.5	0.35
+659	49	Female	No	0.38	27.1	Gout	2	West Polynesian	AG	0.875	0.85
+660	57	Female	No	0.42	29.7	Control	1	West Polynesian	AA	1	0.945
+661	49	Female	NA	0.37	36.7	Gout	2	West Polynesian	GG	1	0.972
+662	64	Male	Yes	0.67	27.3	Gout	2	East Polynesian	AG	0.25	0.156
+663	63	Female	No	0.34	22.9	Control	1	West Polynesian	AG	1	0.954
+664	58	Male	No	0.55	32.8	Gout	2	West Polynesian	AG	1	0.85
+665	64	Female	NA	0.42	30.8	Control	1	European	AA	1	0.988
+666	63	Female	No	0.41	26.1	Gout	2	West Polynesian	AG	0.625	0.535
+667	53	Female	NA	0.34	31.3	Gout	2	European	AA	0.625	0.5
+668	53	Male	No	0.5	30	Gout	2	European	AA	0.5	0.269
+669	57	Female	No	0.32	23.5	Control	1	Mixed Polynesian	AG	1	0.982
+670	47	Female	No	0.3	26	Control	1	Mixed Polynesian	GG	0.5	0.295
+671	62	Male	No	0.49	36.5	Gout	2	West Polynesian	AA	0.875	0.766
+672	57	Male	No	0.45	35	Gout	2	West Polynesian	AA	0.75	0.685
+673	51	Male	Yes	0.62	39.3	Control	1	West Polynesian	AG	0.5	0.389
+674	61	Female	No	0.34	23.4	NA	NA	West Polynesian	AG	1	0.989
+675	64	Male	Yes	0.51	26.9	Control	1	East Polynesian	AG	1	0.85
+676	49	Male	NA	0.48	25.5	Control	1	West Polynesian	GG	0.875	0.776
+677	51	Female	NA	0.3	25.7	Control	1	West Polynesian	AA	1	0.945
+678	55	Male	NA	0.51	29.5	Gout	2	Mixed Polynesian	GG	0.5	0.393
+679	55	Female	No	0.38	28.3	Gout	2	East Polynesian	GG	1	0.962
+680	51	Female	No	0.37	34.4	NA	NA	West Polynesian	AA	1	0.993
+681	55	Female	No	0.27	28.2	Gout	2	West Polynesian	GG	0.75	0.725
+682	56	Female	No	0.43	40.5	Control	1	European	AA	1	0.864
+683	58	Female	Yes	0.3	24.2	Gout	2	European	AA	0.75	0.694
+684	48	Female	NA	0.29	23.6	Control	1	Mixed Polynesian	AG	1	0.955
+685	51	Female	No	0.32	22.1	Control	1	West Polynesian	GG	1	0.989
+686	58	Female	No	0.32	31.9	Gout	2	West Polynesian	AA	0.5	0.35
+687	51	Female	No	0.24	20.9	Control	1	East Polynesian	GG	1	0.993
+688	53	Female	No	0.42	33.2	Control	1	West Polynesian	AA	1	0.934
+689	50	Female	No	0.3	33.9	Control	1	Mixed Polynesian	AG	1	0.976
+690	63	Female	No	0.34	23.9	Control	1	Mixed Polynesian	AG	1	0.994
+691	45	Male	No	0.48	51	Control	1	Mixed Polynesian	AA	0.25	0.141
+692	64	Female	No	0.4	29.3	Gout	2	West Polynesian	GG	1	0.934
+693	55	Male	Yes	0.46	30.4	Control	1	East Polynesian	GG	1	0.982
+694	58	Male	No	0.5	29.7	Control	1	East Polynesian	GG	1	0.988
+695	64	Female	No	0.39	25.3	Control	1	West Polynesian	AG	1	0.969
+696	62	Male	NA	0.48	22.7	Gout	2	East Polynesian	GG	1	0.969
+697	49	Female	No	0.38	25.7	NA	NA	West Polynesian	GG	0.875	0.777
+698	54	Male	No	0.47	25.5	Gout	2	Mixed Polynesian	AG	0.875	0.85
+699	58	Female	Yes	0.4	27.9	Gout	2	East Polynesian	AG	1	0.85
+700	45	Female	No	0.27	24.7	Gout	2	Mixed Polynesian	GG	0.75	0.725
+701	52	Female	No	0.39	23.1	Control	1	Mixed Polynesian	GG	1	0.995
+702	57	Female	No	0.41	34.6	Gout	2	West Polynesian	AA	1	0.85
+703	59	Male	Yes	0.51	45.9	Control	1	Mixed Polynesian	GG	1	0.85
+704	49	Female	No	0.38	27.5	Control	1	West Polynesian	GG	0.5	0.35
+705	45	Female	No	0.3	28.2	Gout	2	East Polynesian	AG	0.75	0.725
+706	64	Male	No	0.46	30.7	Control	1	East Polynesian	GG	0.25	0.088
+707	63	Female	No	0.3	26.9	Gout	2	East Polynesian	AG	1	1
+708	57	Male	NA	0.55	25.1	Control	1	European	GG	1	1
+709	64	Female	No	0.35	23.4	Gout	2	European	AA	1	0.85
+710	48	Female	No	0.33	40.9	Control	1	European	GG	1	0.85
+711	60	Female	No	0.27	20.5	Control	1	East Polynesian	AG	0.875	0.85
+712	64	Male	No	0.5	33.4	Control	1	West Polynesian	AG	0.75	0.631
+713	45	Male	NA	0.53	32.2	NA	NA	European	AA	0.25	0.053
+714	47	Male	No	0.54	30.4	Gout	2	East Polynesian	GG	1	0.85
+715	61	Male	No	0.48	32.5	Gout	2	European	GG	1	0.955
+716	55	Male	No	0.51	27.9	Control	1	European	AA	1	0.973
+717	62	Female	No	0.4	24.7	Gout	2	European	AA	1	0.934
+718	49	Female	No	0.35	27.9	Control	1	European	AG	1	0.963
+719	58	Male	No	0.47	33.7	Control	1	European	AG	0.875	0.85
+720	52	Male	No	0.45	34.4	NA	NA	East Polynesian	GG	1	0.97
+721	57	Male	No	0.54	27.9	Control	1	Mixed Polynesian	AG	0.625	0.545
+722	56	Female	No	0.29	19.5	Gout	2	West Polynesian	AG	1	0.85
+723	52	Male	No	0.47	36.2	Control	1	Mixed Polynesian	GG	0.75	0.6
+724	59	Female	NA	0.34	18.6	Control	1	West Polynesian	GG	1	0.85
+725	62	Female	Yes	0.39	45.2	Control	1	West Polynesian	AG	0.75	0.694
+726	61	Male	Yes	0.55	36.1	NA	NA	East Polynesian	GG	1	0.963
+727	48	Male	NA	0.46	37.8	Control	1	West Polynesian	AG	0.875	0.85
+728	45	Female	No	0.39	32.4	Gout	2	West Polynesian	GG	1	0.85
+729	58	Female	No	0.4	26.4	Gout	2	East Polynesian	GG	1	0.993
+730	56	Male	No	0.43	30.7	Gout	2	West Polynesian	AG	0.75	0.6
+731	61	Male	No	0.57	36.4	Gout	2	West Polynesian	AA	1	0.867
+732	55	Female	No	0.29	42.1	Control	1	East Polynesian	AG	1	0.986
+733	60	Female	No	0.41	27.7	Control	1	West Polynesian	AG	1	0.97
+734	49	Female	No	0.36	45.6	Control	1	West Polynesian	AG	1	0.984
+735	55	Female	NA	0.37	28.9	Control	1	East Polynesian	GG	1	1
+736	49	Male	No	0.54	29.7	Gout	2	West Polynesian	GG	1	0.85
+737	56	Female	Yes	0.42	28.1	Control	1	West Polynesian	GG	1	0.995
+738	52	Female	Yes	0.39	31.4	Gout	2	West Polynesian	AA	1	0.901
+739	56	Female	No	0.39	23.4	Control	1	West Polynesian	AA	0.125	0.037
+740	46	Female	No	0.28	26.6	Control	1	West Polynesian	AG	1	0.85
+741	53	Female	NA	0.39	23.6	Control	1	West Polynesian	AG	1	0.955
+742	55	Male	No	0.44	28.2	Control	1	Mixed Polynesian	GG	1	0.973
+743	60	Male	NA	0.59	25.8	Control	1	Mixed Polynesian	AG	0.625	0.501
+744	57	Female	No	0.42	30.8	Gout	2	Mixed Polynesian	GG	1	0.987
+745	48	Female	No	0.34	26.4	Gout	2	East Polynesian	AG	0.75	0.725
+746	61	Male	Yes	0.49	30.3	Gout	2	West Polynesian	GG	1	0.986
+747	47	Female	No	0.42	37.4	Control	1	East Polynesian	AG	1	0.85
+748	64	Male	Yes	0.47	25.1	Gout	2	West Polynesian	GG	0.75	0.6
+749	51	Male	No	0.47	29.2	Gout	2	East Polynesian	AG	0.125	0.038
+750	52	Female	No	0.34	23	Gout	2	East Polynesian	GG	0.5	0.475
+751	57	Female	No	0.42	40.9	Control	1	East Polynesian	GG	0.75	0.726
+752	52	Female	No	0.33	26	Gout	2	West Polynesian	GG	0.125	0.038
+753	59	Male	No	0.46	27.9	Control	1	West Polynesian	AG	1	1
+754	59	Female	No	0.38	25.3	Gout	2	East Polynesian	GG	1	0.993
+755	55	Male	NA	0.46	28.9	Control	1	West Polynesian	AG	1	0.994
+756	46	Female	NA	0.33	29.7	Control	1	Mixed Polynesian	AG	0.625	0.547
+757	59	Female	No	0.32	44.4	Control	1	West Polynesian	AG	0.5	0.442
+758	52	Female	No	0.37	23.7	Control	1	Mixed Polynesian	GG	1	0.982
+759	62	Female	No	0.32	21.7	Gout	2	Mixed Polynesian	GG	1	0.986
+760	56	Female	No	0.31	27.3	Gout	2	Mixed Polynesian	GG	1	0.973
+761	62	Male	No	0.45	24.9	Control	1	Mixed Polynesian	AG	0.916	0.85
+762	50	Female	No	0.2	20.2	Gout	2	Mixed Polynesian	AG	0.75	0.6
+763	50	Female	Yes	0.38	34.6	Control	1	West Polynesian	GG	0.25	0.055
+764	51	Female	No	0.37	25.1	Control	1	Mixed Polynesian	GG	0.5	0.27
+765	64	Female	Yes	0.35	20.4	Control	1	West Polynesian	GG	0.875	0.779
+766	60	Male	No	0.47	25.3	Gout	2	Mixed Polynesian	AG	0.5	0.476
+767	64	Female	Yes	0.39	27.9	NA	NA	West Polynesian	AG	1	1
+768	56	Male	No	0.52	28.3	Gout	2	West Polynesian	GG	1	0.984
+769	56	Female	Yes	0.37	36.5	Control	1	West Polynesian	AA	0.5	0.305
+770	61	Male	No	0.5	26.7	Gout	2	East Polynesian	GG	0.916	0.85
+771	61	Female	No	0.36	27.7	Control	1	Mixed Polynesian	GG	1	0.85
+772	45	Female	No	0.29	25.7	Gout	2	West Polynesian	GG	0.375	0.209
+773	53	Female	NA	0.21	21.2	Control	1	West Polynesian	AG	1	0.99
+774	54	Female	No	0.26	23.6	Gout	2	West Polynesian	AA	1	0.85
+775	63	Female	No	0.4	32.7	Gout	2	West Polynesian	GG	1	1
+776	60	Male	No	0.46	30.8	Control	1	West Polynesian	AA	1	0.85
+777	62	Male	No	0.45	29.2	Control	1	Mixed Polynesian	GG	0.875	0.78
+778	63	Female	No	0.4	27.1	Control	1	West Polynesian	AG	0.75	0.728
+779	58	Male	Yes	0.59	22.7	Control	1	Mixed Polynesian	AG	0.25	0.058
+780	56	Female	No	0.24	25	NA	NA	West Polynesian	AA	1	0.947
+781	63	Male	Yes	0.49	31.2	Gout	2	West Polynesian	AA	1	0.867
+782	60	Female	No	0.38	35.1	Gout	2	West Polynesian	AA	0.5	0.35
+783	51	Male	No	0.52	38.7	Gout	2	West Polynesian	AG	0.875	0.783
+784	60	Female	No	0.37	29.3	Gout	2	West Polynesian	AG	0.25	0.1
+785	62	Female	No	0.41	30.6	Gout	2	West Polynesian	AG	0.75	0.6
+786	64	Male	No	0.64	29.1	Control	1	West Polynesian	AG	1	0.935
+787	49	Male	No	0.67	45.4	Control	1	East Polynesian	GG	1	0.994
+788	53	Female	No	0.26	40.8	Control	1	East Polynesian	GG	0.25	0.1
+789	61	Female	No	0.39	25.4	Gout	2	East Polynesian	GG	0.75	0.696
+790	60	Male	No	0.46	26.4	Control	1	East Polynesian	GG	1	0.85
+791	45	Female	NA	0.39	43.3	Gout	2	East Polynesian	GG	0.375	0.211
+792	51	Male	No	0.48	26	Control	1	East Polynesian	GG	0.75	0.6
+793	55	Female	No	0.29	27.2	Gout	2	East Polynesian	GG	0.25	0.064
+794	47	Male	No	0.53	31.5	NA	NA	East Polynesian	GG	0.75	0.732
+795	61	Female	No	0.15	26.9	Gout	2	East Polynesian	GG	1	0.85
+796	49	Female	No	0.4	23.3	Control	1	West Polynesian	GG	1	0.868
+797	60	Female	No	0.39	27.7	Control	1	East Polynesian	GG	1	0.976
+798	61	Female	No	0.24	23.9	Gout	2	East Polynesian	GG	1	0.993
+799	57	Male	No	0.46	35.4	Control	1	East Polynesian	GG	1	0.973
+800	56	Male	Yes	0.65	24.7	Control	1	East Polynesian	GG	0.25	0.1
+801	62	Female	Yes	0.41	35.6	Gout	2	East Polynesian	AG	0.25	0.1
+802	57	Male	No	0.52	31.2	Gout	2	East Polynesian	AA	0.875	0.789
+803	53	Female	NA	0.43	24.6	Control	1	Mixed Polynesian	AG	1	1
+804	51	Female	NA	0.37	27.8	Gout	2	East Polynesian	AG	1	NA
+805	57	Male	No	0.49	29.3	Control	1	East Polynesian	GG	0.875	0.794
+806	51	Female	No	0.32	27.4	Gout	2	European	AA	0.75	0.631
+807	62	Female	No	0.43	32.7	Control	1	East Polynesian	GG	1	0.85
+808	62	Male	No	0.46	28.6	Control	1	East Polynesian	GG	0.875	0.797
+809	59	Female	No	0.37	28.8	Control	1	East Polynesian	AG	1	0.97
+810	55	Male	No	0.52	28.2	NA	NA	East Polynesian	GG	0.25	0.091
+811	54	Female	NA	0.3	25.7	Control	1	East Polynesian	GG	0.5	0.449
+812	56	Male	No	0.48	28.7	Gout	2	East Polynesian	GG	1	0.993
+813	56	Female	No	0.37	51.6	Gout	2	East Polynesian	AG	1	0.85
+814	58	Male	NA	0.5	28.6	Gout	2	East Polynesian	GG	0.5	0.46
+815	49	Male	No	0.48	25.1	Control	1	East Polynesian	GG	1	0.986
+816	47	Female	No	0.28	25.1	Control	1	East Polynesian	GG	1	0.903
+817	51	Female	No	0.34	23.8	Gout	2	West Polynesian	AG	0.625	0.549
+818	50	Male	No	0.48	24.8	Control	1	East Polynesian	GG	0.5	0.461
+819	46	Female	Yes	0.38	27.9	Control	1	East Polynesian	AG	0.375	0.212
+820	60	Male	No	0.65	28.3	Gout	2	East Polynesian	GG	1	NA
+821	49	Female	No	0.36	32.3	Control	1	East Polynesian	GG	0.5	0.328
+822	61	Female	No	0.31	28.8	NA	NA	East Polynesian	GG	1	0.964
+823	52	Female	No	0.42	26.1	Control	1	East Polynesian	AG	1	0.85
+824	48	Male	No	0.55	40.8	NA	NA	East Polynesian	GG	0.5	0.259
+825	55	Female	No	0.36	28.8	Gout	2	East Polynesian	GG	0.125	0.041
+826	53	Female	NA	0.34	26.3	Gout	2	East Polynesian	AG	1	0.99
+827	50	Female	Yes	0.42	32.9	Control	1	East Polynesian	AA	1	0.98
+828	59	Male	No	0.43	21	Gout	2	East Polynesian	GG	1	0.964
+829	48	Male	No	0.52	35.6	Control	1	East Polynesian	AG	0.75	0.553
+830	57	Female	No	0.33	18.9	Gout	2	East Polynesian	GG	1	0.85
+831	58	Female	NA	0.33	29.1	Control	1	West Polynesian	GG	1	0.97
+832	60	Male	No	0.64	25.5	NA	NA	East Polynesian	AG	1	0.964
+833	54	Female	No	0.34	32.9	Control	1	East Polynesian	GG	1	0.85
+834	49	Female	No	0.42	33.8	Control	1	East Polynesian	GG	1	0.977
+835	59	Male	No	0.45	27.5	Control	1	East Polynesian	AG	1	0.992
+836	53	Male	No	0.5	22.6	Gout	2	East Polynesian	GG	1	0.85
+837	47	Male	No	0.46	34.9	Gout	2	Mixed Polynesian	AA	1	0.964
+838	46	Male	No	0.46	39.1	Control	1	East Polynesian	GG	1	0.955
+839	55	Male	No	0.45	23.5	Gout	2	West Polynesian	AG	0.75	0.732
+840	54	Male	NA	0.52	28.9	Gout	2	East Polynesian	GG	1	0.965
+841	58	Male	No	0.43	32.8	Control	1	West Polynesian	GG	1	0.965
+842	64	Female	No	0.42	27.2	Control	1	East Polynesian	GG	1	0.986
+843	61	Female	No	0.27	24.5	Control	1	East Polynesian	GG	1	0.85
+844	46	Female	No	0.28	26.2	Gout	2	East Polynesian	GG	1	0.85
+845	48	Female	NA	0.42	32	Control	1	West Polynesian	AG	1	0.948
+846	60	Female	No	0.26	20.6	NA	NA	West Polynesian	AG	1	0.85
+847	59	Male	No	0.5	33.5	Control	1	West Polynesian	AG	1	0.992
+848	53	Male	No	0.48	48.4	Control	1	East Polynesian	GG	0.5	0.466
+849	56	Female	NA	0.34	24.4	Control	1	East Polynesian	GG	1	0.85
+850	59	Female	Yes	0.39	24.7	Gout	2	West Polynesian	GG	1	0.85
+851	49	Female	No	0.24	36.4	Gout	2	East Polynesian	GG	1	0.85
+852	63	Male	No	0.5	28.6	Gout	2	East Polynesian	AG	0.5	0.35
+853	53	Female	NA	0.3	17	Gout	2	East Polynesian	AG	0.75	0.557
+854	63	Male	No	0.44	27.8	Control	1	East Polynesian	GG	1	0.85
+855	45	Male	No	0.57	32.8	Gout	2	East Polynesian	AG	1	0.935
+856	64	Male	No	0.48	29.7	Control	1	West Polynesian	AG	0.5	0.233
+857	60	Female	NA	0.37	27.4	Gout	2	West Polynesian	GG	1	0.991
+858	57	Male	No	0.77	35.8	NA	NA	West Polynesian	AA	1	0.85
+859	60	Male	No	0.49	28.3	Control	1	Mixed Polynesian	AG	0.5	0.398
+860	63	Male	No	0.49	35.2	Gout	2	West Polynesian	GG	1	0.948
+861	63	Female	No	0.25	26.9	Gout	2	West Polynesian	GG	0.25	0.1
+862	50	Male	NA	0.5	30.5	Control	1	West Polynesian	AG	1	0.85
+863	48	Female	No	0.36	34	Control	1	West Polynesian	AA	1	0.939
+864	59	Male	No	0.49	27.7	Control	1	East Polynesian	GG	0.625	0.502
+865	64	Female	NA	0.26	21.5	Gout	2	East Polynesian	GG	1	0.983
+866	55	Female	No	0.43	23	Gout	2	East Polynesian	GG	1	0.98
+867	63	Male	NA	0.54	29.1	Gout	2	East Polynesian	AG	1	0.948
+868	61	Female	Yes	0.33	25.7	Gout	2	East Polynesian	GG	1	NA
+869	62	Male	Yes	0.51	28.2	Control	1	East Polynesian	AG	0.75	0.633
+870	61	Female	Yes	0.42	24	NA	NA	East Polynesian	AG	1	0.871
+871	64	Female	No	0.33	23.4	Gout	2	East Polynesian	GG	1	0.85
+872	49	Female	No	0.43	27.7	Control	1	East Polynesian	AG	1	0.992
+873	62	Male	No	0.51	31.6	Control	1	East Polynesian	GG	0.25	0.1
+874	53	Female	No	0.37	28.8	Control	1	East Polynesian	AG	0.5	0.468
+875	51	Male	Yes	0.45	51.1	Control	1	East Polynesian	AG	0.25	0.064
+876	58	Female	No	0.41	30.9	Control	1	East Polynesian	GG	1	0.956
+877	60	Male	No	0.44	26.4	Gout	2	East Polynesian	GG	1	0.988
+878	50	Male	No	0.49	39.2	Gout	2	East Polynesian	AG	1	0.85
+879	53	Male	No	0.51	47.9	Gout	2	East Polynesian	GG	1	NA
+880	63	Female	No	0.41	23.7	Control	1	East Polynesian	AG	1	NA
+881	54	Male	NA	0.58	34.7	NA	NA	East Polynesian	AG	1	0.995
+882	45	Female	No	0.38	23.3	Gout	2	East Polynesian	GG	1	0.994
+883	59	Female	No	0.34	25.7	Control	1	West Polynesian	AG	1	0.977
+884	46	Female	No	0.42	35.1	Gout	2	East Polynesian	GG	1	0.85
+885	59	Female	No	0.39	26.3	Gout	2	East Polynesian	AG	0.75	0.7
+886	49	Female	No	0.28	26.4	Gout	2	West Polynesian	AG	1	0.85
+887	46	Female	No	0.43	27.2	Gout	2	West Polynesian	GG	1	0.85
+888	53	Male	Yes	0.57	26.7	Control	1	West Polynesian	AA	1	NA
+889	64	Male	No	0.51	29.9	Gout	2	Mixed Polynesian	GG	0.25	0.101
+890	57	Female	No	0.43	29	Control	1	East Polynesian	GG	0.5	0.469
+891	59	Female	No	0.21	23.4	Control	1	East Polynesian	GG	1	NA
+892	64	Female	No	0.33	22.5	Gout	2	East Polynesian	GG	1	0.85
+893	57	Female	No	0.2	25.7	Control	1	East Polynesian	GG	0.125	NA
+894	57	Female	No	0.32	21.6	Gout	2	East Polynesian	AG	1	0.988
+895	62	Male	No	0.45	25.5	Gout	2	East Polynesian	GG	1	0.99
+896	62	Male	NA	0.65	36.9	Gout	2	East Polynesian	GG	1	0.924
+897	61	Female	NA	0.3	27.7	Control	1	East Polynesian	GG	1	0.991
+898	51	Female	No	0.39	28.7	Control	1	East Polynesian	GG	0.25	0.1
+899	52	Female	No	0.33	29.5	Control	1	East Polynesian	AA	1	0.948
+900	57	Female	No	0.42	29.3	Control	1	East Polynesian	GG	1	0.949
+901	63	Male	No	0.49	22.5	Control	1	East Polynesian	GG	1	0.85
+902	46	Female	No	0.28	21	Gout	2	East Polynesian	AG	1	0.85
+903	63	Male	No	0.49	24.2	Control	1	East Polynesian	GG	1	0.949
+904	46	Male	No	0.46	33.9	Control	1	East Polynesian	GG	1	0.951
+905	57	Male	No	0.45	26.1	Control	1	East Polynesian	AG	NA	NA
+906	61	Female	Yes	0.34	34.5	Control	1	West Polynesian	AG	1	0.973
+907	51	Female	No	0.33	25.8	Gout	2	West Polynesian	AG	1	0.977
+908	53	Male	No	0.44	37.7	Control	1	East Polynesian	GG	1	0.85
+909	59	Male	No	0.52	33.3	NA	NA	East Polynesian	AG	1	0.904
+910	56	Female	No	0.33	29.4	Control	1	East Polynesian	GG	NA	NA
+911	52	Male	No	0.59	32	NA	NA	East Polynesian	AG	1	0.85
+912	60	Female	Yes	0.4	32.9	Control	1	Mixed Polynesian	AG	0.25	0.154
+913	56	Female	NA	0.42	27.4	Control	1	East Polynesian	GG	1	0.987
+914	54	Female	No	0.28	28.6	Control	1	East Polynesian	GG	1	0.951
+915	56	Female	No	0.4	26.1	Gout	2	East Polynesian	GG	1	0.99
+916	49	Female	No	0.32	20.6	Gout	2	East Polynesian	AG	1	0.98
+917	45	Female	No	0.32	26.2	NA	NA	Mixed Polynesian	AG	1	0.956
+918	47	Male	No	0.47	33	Gout	2	East Polynesian	GG	1	0.85
+919	62	Female	No	0.32	42.7	Gout	2	East Polynesian	GG	0.5	0.35
+920	60	Female	No	0.33	27.2	Gout	2	East Polynesian	AG	0.125	0.021
+921	48	Male	No	0.49	23.3	Control	1	East Polynesian	GG	1	0.85
+922	61	Female	No	0.42	25.5	Control	1	East Polynesian	GG	0.25	0.065
+923	54	Female	No	0.26	24.5	Control	1	East Polynesian	AG	0.75	0.6
+924	59	Male	No	0.51	25.4	Gout	2	East Polynesian	GG	0.75	0.56
+925	59	Female	No	0.37	23	Control	1	East Polynesian	GG	1	0.991
+926	59	Male	No	0.44	21.7	Gout	2	East Polynesian	GG	1	0.85
+927	54	Female	No	0.41	31.8	Gout	2	East Polynesian	AG	1	0.987
+928	55	Male	No	0.45	25.5	Control	1	East Polynesian	AG	NA	NA
+929	61	Female	No	0.23	29.5	Gout	2	East Polynesian	AG	1	0.85
+930	46	Female	No	0.39	35.1	Control	1	East Polynesian	GG	0.75	0.633
+931	64	Female	No	0.43	40	Control	1	West Polynesian	GG	0.5	0.274
+932	62	Male	No	0.46	33.6	Control	1	Mixed Polynesian	GG	1	0.85
+933	49	Male	No	0.55	47.1	Control	1	Mixed Polynesian	AA	1	0.85
+934	57	Female	NA	0.38	23.8	Gout	2	East Polynesian	AG	0.375	0.221
+935	51	Female	No	0.35	40.3	Control	1	West Polynesian	AG	1	0.85
+936	62	Female	NA	0.42	21.8	Control	1	West Polynesian	AG	0.5	0.334
+937	61	Female	No	0.33	27.9	Gout	2	West Polynesian	AG	1	0.991
+938	57	Female	No	0.32	23.1	Gout	2	Mixed Polynesian	GG	1	0.965
+939	46	Male	No	0.46	29.7	NA	NA	East Polynesian	GG	1	0.85
+940	48	Female	Yes	0.39	21	Gout	2	East Polynesian	GG	1	0.98
+941	58	Male	No	0.49	39.4	Control	1	East Polynesian	GG	0.5	0.403
+942	59	Female	No	0.2	23.8	Gout	2	East Polynesian	GG	1	0.957
+943	59	Female	No	0.36	20.8	Gout	2	East Polynesian	GG	1	0.977
+944	59	Male	No	0.43	23.6	NA	NA	East Polynesian	GG	1	0.989
+945	45	Male	Yes	0.44	33.2	Control	1	Mixed Polynesian	GG	1	0.966
+946	64	Female	Yes	0.34	29	Gout	2	East Polynesian	AG	1	0.987
+947	47	Male	No	0.49	30.4	Gout	2	East Polynesian	AA	0.5	0.234
+948	52	Female	NA	0.36	21.2	Gout	2	East Polynesian	AG	1	0.98
+949	63	Female	No	0.26	34.1	Control	1	East Polynesian	GG	1	0.987
+950	64	Male	Yes	0.46	29.5	Gout	2	Mixed Polynesian	GG	1	0.85
+951	64	Male	No	0.69	25	Gout	2	East Polynesian	GG	1	0.993
+952	47	Female	No	0.34	25.9	Gout	2	East Polynesian	AG	0.25	0.091
+953	62	Male	No	0.56	28.2	Gout	2	East Polynesian	GG	0.5	0.261
+954	56	Female	No	0.23	27.9	Gout	2	East Polynesian	AG	1	0.872
+955	56	Female	No	0.37	37.8	Control	1	East Polynesian	GG	1	0.994
+956	59	Male	No	0.48	25.7	Control	1	East Polynesian	AG	0.5	0.35
+957	55	Female	No	0.32	27.2	Gout	2	East Polynesian	GG	0.5	0.475
+958	57	Male	NA	0.44	32.2	Control	1	East Polynesian	GG	1	0.957
+959	58	Female	No	0.29	28.1	Control	1	East Polynesian	GG	0.75	0.636
+960	46	Female	No	0.34	30.5	Control	1	East Polynesian	AG	1	0.85
+961	62	Female	No	0.39	28.9	Gout	2	East Polynesian	AA	1	0.873
+962	64	Female	No	0.3	23.7	Gout	2	East Polynesian	GG	1	0.875
+963	58	Male	No	0.47	34.1	Control	1	East Polynesian	GG	1	0.85
+964	58	Female	No	0.38	28.3	Control	1	East Polynesian	AG	0.5	0.235
+965	56	Female	No	0.33	22.6	Control	1	East Polynesian	AG	NA	NA
+966	51	Female	NA	0.42	25.7	NA	NA	West Polynesian	GG	0.75	0.56
+967	50	Male	No	0.49	46.8	Control	1	West Polynesian	GG	1	0.99
+968	49	Female	No	0.26	21.5	Gout	2	East Polynesian	AG	1	0.905
+969	54	Female	No	0.32	25	Control	1	East Polynesian	AG	1	0.992
+970	56	Male	No	0.54	30.6	Control	1	East Polynesian	AG	1	0.85
+971	50	Male	No	0.48	35.3	Control	1	East Polynesian	AG	1	0.957
+972	62	Female	No	0.41	22.8	Control	1	East Polynesian	GG	1	0.989
+973	57	Female	No	0.3	22.5	Control	1	East Polynesian	GG	1	0.85
+974	63	Female	No	0.42	26.9	Control	1	East Polynesian	GG	1	0.85
+975	50	Female	Yes	0.35	30.9	Control	1	East Polynesian	AG	NA	NA
+976	63	Male	No	0.48	31.9	Gout	2	East Polynesian	GG	0.75	0.6
+977	59	Female	No	0.35	28.4	NA	NA	East Polynesian	GG	1	0.85
+978	63	Female	NA	0.33	41.2	Control	1	West Polynesian	AG	1	0.991
+979	61	Female	Yes	0.11	36.6	NA	NA	West Polynesian	AG	0.25	0.154
+980	53	Female	No	0.39	32.4	Control	1	West Polynesian	GG	NA	NA
+981	57	Female	No	0.36	26.2	Gout	2	East Polynesian	AA	1	0.995
+982	56	Female	No	0.4	34.3	Control	1	West Polynesian	GG	0.5	0.478
+983	49	Male	No	0.51	31.6	Control	1	East Polynesian	AA	1	0.983
+984	64	Female	No	0.43	33.8	Gout	2	East Polynesian	GG	0.75	0.6
+985	51	Female	No	0.25	27.3	Control	1	West Polynesian	AG	1	0.85
+986	47	Female	Yes	0.22	21.2	Gout	2	Mixed Polynesian	GG	1	0.98
+987	64	Female	No	0.31	24.4	Control	1	East Polynesian	AG	1	0.987
+988	60	Male	Yes	0.45	31.7	NA	NA	Mixed Polynesian	GG	1	0.971
+989	54	Female	NA	0.39	27.8	Gout	2	West Polynesian	AG	1	0.952
+990	46	Female	No	0.28	28.9	Control	1	West Polynesian	AG	0.5	0.35
+991	60	Male	NA	0.52	29.3	Control	1	East Polynesian	GG	1	0.994
+992	46	Female	No	0.36	45.4	NA	NA	European	AG	0.25	0.107
+993	56	Female	No	0.36	29.4	Control	1	European	AG	NA	NA
+994	63	Female	No	0.36	25.7	Control	1	European	AG	1	0.85
+995	49	Female	Yes	0.4	23.1	Gout	2	European	AG	0.5	0.487
+996	60	Female	Yes	0.33	22.6	Control	1	East Polynesian	AG	1	0.877
+997	55	Female	No	0.34	25.8	Control	1	European	AA	1	0.977
+998	58	Female	No	0.25	26.5	Control	1	European	AG	0.875	0.797
+999	64	Female	No	0.39	32.7	NA	NA	European	AA	0.75	0.64
+1000	60	Female	No	0.26	27.2	Control	1	East Polynesian	AA	0.75	0.739
