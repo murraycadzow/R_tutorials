@@ -147,3 +147,8 @@ for( eth in ethgroup){
 model_coef
 model_confint
 ```
+
+
+### Look for where you repeat yourself and ask: 
+
+## **Can I replace this with a function/loop?**
