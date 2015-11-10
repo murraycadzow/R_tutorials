@@ -5,6 +5,8 @@ date: "9 November 2015"
 output: html_document
 ---
 
+https://github.com/murraycadzow/R_tutorials/
+
 # Lesson 7:
 
 This lesson will cover the following:
@@ -93,4 +95,32 @@ for( num in 1:5){
   print( num )
 }
 
+```
+
+
+```{r, echo = TRUE, eval = TRUE, message = FALSE}
+mydata = read.delim(file = "Tanya_Data.txt", header = TRUE, sep = "\t", stringsAsFactors=FALSE)
+
+ethgroup <- levels(as.factor(mydata$ETHCLASS))
+ethgroup
+model_coef <-data.frame()
+model_confint <- list()
+
+for( eth in ethgroup){
+  
+  model = glm(formula = GOUTAFFSTAT ~ BMI + AGE + SNP, data = mydata, subset = ETHCLASS == eth)
+
+  #insert coefficients into dataframe
+  model_coef <- rbind(model_coef, exp(coef(model) ))
+  #make row name be eth for this iteration
+  rownames(model_coef)[which(ethgroup == eth)] <- eth
+  #make names of the coefficients be names of columns
+  names(model_coef) <- names(exp(coef(model)))
+  
+  #put confidence intervals into a list labelled by eth
+  model_confint[[eth]] <- exp(confint(model) ) 
+}
+
+model_coef
+model_confint
 ```
