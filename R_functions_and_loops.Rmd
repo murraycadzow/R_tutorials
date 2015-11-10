@@ -119,6 +119,8 @@ while( i > 0){
 }
 ```
 
+NB: **always make sure your condition will eventually be FALSE before running**
+
 ### Things can get quite fancy
 
 ```{r, echo = TRUE, eval = TRUE, message = FALSE}
