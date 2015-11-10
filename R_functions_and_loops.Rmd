@@ -98,6 +98,29 @@ for( num in 1:5){
 ```
 
 
+### For loop using indices
+
+```{r, echo = TRUE, eval = TRUE}
+myNumbers <- c(11,12,13,14,15)
+
+for( i in 1:length(myNumbers) ){
+  print(paste("number =", myNumbers[i], "index =", i))
+}
+
+```
+
+
+### While loop
+```{r, echo = TRUE, eval = TRUE}
+i = 5
+while( i > 0){
+  print(i)
+  i <- i - 1
+}
+```
+
+### Things can get quite fancy
+
 ```{r, echo = TRUE, eval = TRUE, message = FALSE}
 mydata = read.delim(file = "Tanya_Data.txt", header = TRUE, sep = "\t", stringsAsFactors=FALSE)
 
