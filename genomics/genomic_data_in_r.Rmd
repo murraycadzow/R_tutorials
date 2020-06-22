@@ -2,7 +2,10 @@
 title: "Genomic Data in R"
 author: "Murray Cadzow"
 date: "22/06/2020"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -371,7 +374,7 @@ query(ah_hs, "GRanges")
 
 Let's have a look at AH80075 in some more depth.
 
-```{r}
+```{r, eval = FALSE}
 ah80075_meta <- ah_hs["AH80075"]
 ah80075 <- ah_hs[["AH80075"]]
 ```
