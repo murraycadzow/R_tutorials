@@ -1,0 +1,388 @@
+---
+title: "Genomic Data in R"
+author: "Murray Cadzow"
+date: "22/06/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Genomic Data in R
+
+###### tags: `howto` `tutorials` `R`
+
+learning objectives:
+
+- understand the bioconductor repository
+- understand how to create and manipulate genomic ranges in R
+- How to use AnnotationHub to search for resources
+
+
+## Bioconductor
+
+What is Bioconductor?
+
+Bioconductor is an online repository for biologically focused R packages. Packages submitted to Bioconductor have a higher requirement for package documentation than some other packages repositories such as CRAN.
+
+Bioconductor provides a package management system `BiocManager` to install and manage packages from Bioconductor.
+
+The first step to being able to use packages from Bioconductor is to install `BiocManager`.
+
+```{r, eval = FALSE}
+install.packages('BiocManager')
+```
+
+Once installed we can use `BiocManager` to install packages that are maintained on bioconductor such as `GenomicRanges` and `AnnotationHub`.
+
+```{r, eval = FALSE}
+BiocManager::install("GenomicRanges")
+BiocManager::install("AnnotationHub")
+```
+
+## Integer Ranges {IRanges}
+
+IRanges is a package that underlies GenomicRanges and is a way of representing _Integer Ranges_ in R.
+
+```{r}
+library(IRanges)
+```
+
+
+A range consists of three pieces of information, of which at least 2 must be provided, and the third can automatically calculated
+
+- start
+- end
+- width
+
+```{r}
+IRanges(start = 1, end = 4 , width = 4)
+```
+IRanges will give an error if `width - 1 != end - start`
+
+
+```{r}
+ir1 <- IRanges(start = 1, end = 4) # no width provided
+ir1
+
+ir2 <- IRanges(start = 4, width = 10) # no end provided
+ir2
+
+ir3<- IRanges(end = 20, width = 5) # no start provided
+ir3
+```
+We can create multiple ranges at once by providing vectors to each argument:
+
+```{r}
+ir4 <- IRanges(start = c(1, 15, 30), end = c(10, 40, 35))
+```
+
+We can also provide metadata to the Ranges by supplying additional arguments with values.
+
+```{r}
+ir5 <- IRanges(start = c(1, 15, 30), end = c(10, 40, 35), range_name = c("A", "B","C"))
+ir5
+```
+
+
+We can also combine IRanges with c()
+
+```{r}
+combined_ranges <- c(ir1, ir2, ir3)
+```
+
+If the metadata columns are different we can still combined, but we'll get NAs where the data didn't previously exist.
+
+```{r}
+c(ir1, ir2, ir5)
+```
+
+We can also drop the metadata columns with `ignore.mcols = TRUE`
+
+```{r}
+c(ir1, ir2, ir5, ignore.mcols = TRUE)
+```
+
+### Accessing Ranges information
+
+We can get the starts, ends, widths, and metadata of our ranges using `start()`, `end()`, `width(), mcols()`
+
+```{r}
+ir5
+start(ir5)
+end(ir5)
+width(ir5)
+mcols(ir5)
+```
+
+Challenge:
+
+Find the total width of the widths in `ir5`
+
+
+Subsetting:
+
+You can use single square brackets to subset an IRanges object
+```{r}
+ir5[1:3]
+
+```
+
+Including a comma enables you to subset the metadata columns.
+E.g. `ir[rows, metadata_cols]`
+
+```{r}
+ir5[1, 1]
+```
+
+
+## Genomic Ranges {GenomicRanges}
+
+https://bioconductor.org/packages/release/bioc/vignettes/GenomicRanges/inst/doc/GenomicRangesIntroduction.html#granges-genomic-ranges
+
+GenomicRanges provides a mechanism for manipulating objects of ranges.
+
+An example of a genomic range might be the co-ordinates for a gene
+
+Genomic ranges builds upon the IRanges package, which is designed to deal with manipulation of integer ranges. It does this by adding additional information, such as what chromosome a range belongs to, and if the range is on the positive strand or negative strand (for DNA).
+
+At their heart, genomic ranges have three components:
+
+1. A sequence name (seqnames) - the name of the chromosome
+2. The interval information:
+    - start
+    - end
+    - width
+3. The strand the interval is relevant to
+    - positive (+), negative (-) or any (*)
+
+Beyond this additional metadata can be added, such as a score (e.g. expression) or group name (e.g. gene name).
+
+```{r}
+library(GenomicRanges)
+```
+
+
+### Creating ranges
+
+Genomic Ranges can automatically convert from "chr:start-end:strand" notation
+```{r}
+GRanges("chr1:3000-4000:+")
+```
+
+If you omit the strand it will be considered '*'
+
+```{r}
+GRanges("chr1:3000-4000:+")
+```
+
+You can also create a genomic range by specifying the sequence names and providing a corresponding IRange.
+```{r}
+gr1 <- GRanges(seqnames = c("chr1","chr2", "chr3"), IRanges(start = c(1000, 2000, 2000), end = c(1499,2999, 3999 )), strand = c("+", "-", "*"), gene = c("A","B", "C"))
+gr1
+```
+
+
+### Manipulating regions
+
+- Adding an extra region
+- Subsetting
+
+
+Combining two regions into a single object
+```{r}
+gr2 <- GRanges("chr1:1000-3500:+")
+gr3 <- c(gr1, gr2)
+```
+
+
+Subsetting by indices
+
+```{r}
+gr1[1]
+gr1[2]
+```
+
+Subsetting by conditions:
+```{r}
+gr1[gr1$gene == "B"]
+gr1[seqnames(gr1) == "chr1"]
+gr1[width(gr1) == 1000]
+```
+
+- Genomic convenience functions
+    - promoter
+    - flank
+    - shift
+
+```{r}
+promoters(gr1, upstream = 300, downstream = 100)
+
+flank(gr1, width = 10 )
+flank(gr1, 10, start = FALSE) # based on the end coordinate
+
+shift(gr1, 150)
+shift(gr1, -200)
+
+
+resize(gr1, width = 30)
+resize(gr1, width = c(1000, 200, 45), fix = "center")
+```
+
+
+Challenge:
+
+From `gr3` create a GRanges object called `gr4` that contains all of the ranges on "chr2", resized to be a width of 500, based on the end coordinates of the original regions.
+
+```{r, echo = FALSE}
+gr4 <- resize(gr3[seqnames(gr3) == "chr2"], width = 500, fix = "end")
+```
+ 
+
+
+### Finding and subsetting using overlapping regions
+
+One of the most useful features of GenomicRanges is to be able to operate on two sets of regions.
+
+- intersect
+- union
+- reduce
+
+```{r}
+intersect(gr3, gr4)
+
+union(gr3, gr4)
+
+reduce(gr3)
+reduce(gr3, ignore.strand = TRUE)
+```
+We can find regions that overlap each other between two GRanges objects by using `findOverlaps()` and `subsetByOverlaps()`
+
+
+The result of `findOverlaps()` is a "hits" object, which has two columns: queryHits which corresponds to the row numbers in the GRanges object of the 1st argument, and the subjectHits which is the row number of the overlapping region from the 2nd argument.
+
+`countOverlaps()` will return a numeric vector with the number of times a range from the 2nd argument overlapped the region in the 1st argument. The number of items returned corresponds to the number of regions in argument 1.
+
+`subsetByOverlaps()` will return the ranges in argument 1 that had an overlapping region from argument 2.
+```{r}
+findOverlaps(gr3, gr4)
+
+countOverlaps(gr3, gr4)
+
+subsetByOverlaps(gr3, gr4)
+
+# same as:
+hits <- findOverlaps(gr3, gr4)
+gr3[hits@from]
+```
+
+## AnnotationHub
+
+AnnotationHub is a package that provides access to multiple annotation sources, such as NCBI, ensembl, encode, UCSC, etc.
+
+It includes metadata about each resource that can be queried and downloaded.
+
+```{r}
+library(AnnotationHub)
+ah <- AnnotationHub()
+
+ah
+```
+
+Because things are being updated over time, for reproducibility AnnotationHub provides "snapshots" so that you can refer to resources as they were on particular dates. By default AnnotationHub will use the most recent snapshot date when it creates its cache.
+
+To get the date of our particular snapshot use
+
+```{r}
+snapshotDate(ah)
+```
+
+To get a list of all the available snapshot dates we could have chosen from
+
+```{r}
+possibleDates(ah)
+```
+And we can see where locally AnnotationHub is caching the data
+```{r}
+hubCache(ah)
+```
+To list the specific files of the cache and what dataset thy belong to we can use
+```{r, eval = FALSE}
+ah_cache_files <- fileName(ah)
+ah_cache_files[!is.na(ah_cache_files)]
+```
+
+For refreshing your cache or removing it see the documentation for `refreshHub()` and `removeCache()`
+```{r, eval = FALSE}
+?AnnotationHub
+```
+
+
+
+To get the AnnotationHub identifiers we can use `names()`
+```{r}
+names(ah)
+```
+
+
+We can look at the data providers
+```{r}
+unique(ah$dataprovider)
+```
+
+And the species
+
+```{r}
+unique(ah$species)
+```
+
+We can subset so that our queries are only about a particular species
+
+```{r}
+ah_hs <- subset(ah, species == "Homo sapiens")
+```
+
+
+We can use `display()` to be able to view the resources available
+
+```{r, eval = FALSE}
+display(ah_hs)
+```
+
+To find out the metadata for an object in AnnotationHub we use a single '[]' to access it
+
+```{r}
+ah_hs["AH79577"]
+```
+
+
+And to download the object we use the '[[]]' notation
+
+```{r, eval = FALSE}
+ah_hs[["AH79577"]]
+```
+
+and now we can find out what records contain information about "GRanges"
+
+```{r}
+query(ah_hs, "GRanges")
+```
+
+Let's have a look at AH80075 in some more depth.
+
+```{r}
+ah80075_meta <- ah_hs["AH80075"]
+ah80075 <- ah_hs[["AH80075"]]
+```
+
+Challenge:
+
+- What is the total number of ranges provided?
+- How many chromosomes are there?
+- How many unique gene names are there?
+- What are the different 'types'?
+- How many bases are covered by unique regions? What if we don't worry about strand
+- Choose a gene, create a new GRanges object with only that gene
+  - How many transcripts are there?
+  - How many unique exons does it have?
